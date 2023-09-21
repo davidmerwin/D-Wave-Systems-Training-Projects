@@ -1,4 +1,14 @@
 # D-Wave-Systems-Training-Projects
+
+Table of Contents
+1. Overview
+2. Getting Started
+3. D-Wave Tools and Technologies
+4. Project Summaries
+- Older Projects
+- Newer Projects
+5. Contact Information
+  
 ## Project Directory Structure
     .
     ├── README.md
@@ -18,6 +28,28 @@
 ## Overview
 
 This README outlines my journey through a 5-day Quantum Computing 101 lecture series and hands-on training project sessions with D-Wave Systems. In this document, you'll discover my experience working with D-Wave's tools such as D-Wave Inspector and the various types of problems I tackled.
+
+## Getting Started
+
+To get started with D-Wave Systems, you will need to:
+
+1. **Install D-Wave Ocean SDK**: This software stack includes everything you need to build a D-Wave application.
+
+    ```bash
+    pip install dwave-ocean-sdk
+    ```
+    
+2. **Sign Up on D-Wave Leap**: D-Wave's cloud service for quantum computing.
+
+    [D-Wave Leap Signup](https://cloud.dwavesys.com/leap/)
+
+## D-Wave Tools and Technologies
+
+- **D-Wave Ocean SDK**: Primarily used for problem formulation.
+- **D-Wave IDE**: Used for easier problem modeling and solving.
+- **Qbsolv**: For solving QUBO and Ising problems.
+- **D-Wave Hybrid**: For hybrid classical/quantum algorithms.
+
 
 ## D-Wave Inspector Repository
 
@@ -70,3 +102,17 @@ Number of Reads: 100
 - **QPU_DELAY_TIME_PER_SAMPLE**: \(21 \mu \mathrm{s}\)
 - **TOTAL_POST_PROCESSING_TIME**: \(1.895 \mathrm{~ms}\)
 - **POST_PROCESSING_OVERHEAD_TIME**: \(1.895 \mathrm{~ms}\)
+
+
+
+
+
+
+
+
+## Contact Information
+
+- **Email**: davidmerwin1992@gmail.com
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile)
+  
+Feel free to reach out if you have any questions or would like to collaborate!
