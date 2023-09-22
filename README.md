@@ -64,7 +64,7 @@ To get started with D-Wave Systems, you will need to:
 - **Description**: D-Wave Inspector is a tool for visualizing problems submitted to, and answers received from, a D-Wave structured solver such as an Advantage™ quantum computer.
 
 
-## Projects and Studies during the Training
+## Projects and Studies during the Training:
 
 ### Project ID: cd24acdf-0a8f-44ae-a150-69ece39acec6
 
@@ -103,8 +103,54 @@ Number of Reads: 100
 - **TOTAL_POST_PROCESSING_TIME**: \(1.895 \mathrm{~ms}\)
 - **POST_PROCESSING_OVERHEAD_TIME**: \(1.895 \mathrm{~ms}\)
 
+_______________________________________________________________
 
 
+## Training Project: Number Partitioning
+
+- ID: 23cf353c-5596-4e2e-ab04-dc8372daa7a2
+- Type: qubo
+- Solver: Advantage_system4.1
+- Submitted On: 2023-05-18T23:09:22.949935Z
+- Solved On: 2023-05-18T23:09:23.166683Z
+- Status: COMPLETED
+- Submitted By: Zi2q-7cdd45d9...
+- Number of Reads: 100
+
+Plan of Action For Problem
+
+The training project focuses on Number Partitioning. The objective is to partition a set of numbers into two equal subsets such that the sum of the numbers in each subset is as close as possible. This problem is represented as a QUBO optimization problem.
+
+### Energy and Sample Data
+
+|     | 1507  | 1522  | 1537  | 1552  | ...   | 4403  | energy   | num_oc. |
+| --- | ----- | ----- | ----- | ----- | ----- | ----- | -------- | ------- |
+| 0   | 0     | 0     | 0     | 0     | ...   | 1     | -9826.5  | 35      |
+| 1   | 1     | 1     | 1     | 1     | ...   | 0     | -9826.5  | 21      |
+| 2   | 1     | 0     | 1     | 1     | ...   | 0     | -9816.5  | 24      |
+| 3   | 0     | 1     | 0     | 0     | ...   | 1     | -9816.5  | 15      |
+| 4   | 1     | 1     | 1     | 1     | ...   | 0     | -9298.5  | 1       |
+| 5   | 1     | 0     | 0     | 0     | ...   | 1     | -9276.5  | 1       |
+| 6   | 0     | 1     | 1     | 1     | ...   | 0     | -9276.5  | 1       |
+| 7   | 0     | 0     | 1     | 1     | ...   | 0     | -9179.0  | 1       |
+| 8   | 1     | 0     | 1     | 1     | ...   | 0     | -7332.0  | 1       |
+| ... | ...   | ...   | ...   | ...   | ...   | ...   | ...      | ...     |
+
+### Timing Information
+
+- QPU Sampling Time: 10.008 ms
+- QPU Anneal Time per Sample: 20 µs
+- QPU Readout Time per Sample: 60 µs
+- QPU Access Time: 25.764 ms
+- QPU Access Overhead Time: 3.494 ms
+- QPU Programming Time: 15.756 ms
+- QPU Delay Time per Sample: 21 µs
+- Post Processing Overhead Time: 3.682 ms
+- Total Post Processing Time: 3.682 ms
+
+## Conclusion
+
+This training project on Number Partitioning successfully utilizes QUBO optimization to partition a set of numbers into two equal subsets. The energy analysis and sample data provide insights into the optimization results. The timing information highlights the performance characteristics of the solution process.
 
 
 
@@ -113,6 +159,6 @@ Number of Reads: 100
 ## Contact Information
 
 - **Email**: davidmerwin1992@gmail.com
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile)
+- **LinkedIn**: 
   
 Feel free to reach out if you have any questions or would like to collaborate!
