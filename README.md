@@ -38,9 +38,7 @@ Table of Contents
         ├── data
         └── ...
                                                 
-\begin{equation}
-H=-J \sum_{<i, j>} S_i S_j
-\end{equation}                         
+                   
                                               
 
     # Quantum Computing 101 with D-Wave Systems
