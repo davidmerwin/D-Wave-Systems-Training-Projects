@@ -9,19 +9,39 @@ Table of Contents
 - Newer Projects
 5. Contact Information
   
-## Project Directory Structure
-    .
+## Project Directory Structure:
+    (BELIEF SPACE)
     ├── README.md
     ├── code
     │   └── number_partitioning.py
     ├── data
     │   └── training_number_partitioning.json
     ├── math_equations
-    │   └── equations.md
-    ├── results
+    │   └── equations.md  ──────                                                                                                
+    ├── results                                                                                   
     │   └── sampling_time_analysis.md
-    └── ...
-
+    └──├── quantum_tsp
+    │   └── code
+    │       └── quantum_tsp.py
+    │   └── data
+    │       └── cities.json
+    │   └── math_equations
+    │       └── tsp_equations.md
+    │   └── results
+    │       └── tsp_results.md
+    ├── project_cd24acdf-0a8f-44ae-a150-69ece39acec6
+    │   ├── code
+    │   ├── data
+    │   └── ...
+    └── project_6dbabf04-9a93-4534-9239-51d9edc7cbe2
+        ├── code
+        ├── data
+        └── ...
+                                                
+\begin{equation}
+H=-J \sum_{<i, j>} S_i S_j
+\end{equation}                         
+                                              
 
     # Quantum Computing 101 with D-Wave Systems
 
