@@ -1,0 +1,110 @@
+### Table of Keywords and Concepts
+
+| Keyword/Concept       | Description                                                                                                            | Python3 Example             | Mathematical Equation         |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------|-----------------------------|-------------------------------|
+| QUBO (Quadratic Unconstrained Binary Optimization) | Mathematical representation for optimization problems that can be solved on D-Wave quantum computers | `Q = {(0, 0): -1, (1, 1): -1, (0, 1): 2}` | \(Q_{ij}x_i x_j\)     |
+| Sampler/Solver        | Backend computational resource for solving QUBO problems                                                               | `sampler = EmbeddingComposite(DWaveSampler())` | N/A                           |
+| Energy                | Measurement of solution quality. Lower is better.                                                                       | `"Energy:", energy`          | \(E = \sum Q_{ij}x_i x_j\)    |
+| EmbeddingComposite    | Handles the mapping between logical and physical qubits                                                                 | `EmbeddingComposite(DWaveSampler())` | N/A                   |
+| num_reads             | Number of times the problem is solved to gather statistics                                                             | `num_reads=10`               | N/A                           |
+
+### Crash Course
+
+#### Understanding QUBO
+- QUBO is a way to represent optimization problems, especially for D-Wave's quantum annealing machines.
+- The Q matrix is the mathematical representation of the QUBO problem.
+
+```python
+# Defining Q matrix in Python
+Q = {(0, 0): -1, (1, 1): -1, (0, 1): 2}
+```
+- **Mathematical Equation**: \(Q = -x_0^2 - x_1^2 + 2x_0x_1\)
+
+#### Sampler/Solver
+- A sampler/solver is a computational resource you can use to solve the QUBO problem.
+
+```python
+# Obtain a sampler in Python
+sampler = EmbeddingComposite(DWaveSampler())
+```
+
+#### Energy
+- Energy is a measure of how optimal the solution is. The goal is to minimize this energy.
+  
+```python
+# Printing energy in Python
+print("Energy:", energy)
+```
+- **Mathematical Equation**: \(E = \sum Q_{ij}x_i x_j\)
+
+### Study Guide
+
+1. **Install Necessary Libraries**
+    - `pip install dwave-ocean-sdk`
+
+2. **Understand QUBO**
+    - Study the concept and mathematical representation. Try creating simple Q matrices.
+  
+3. **Coding Practice**
+    - Get experience by running simple programs to solve QUBO problems.
+
+4. **Energy Understanding**
+    - Dive deep into how energy correlates with the quality of the solutions.
+
+5. **Consult Documentation and Community**
+    - Always refer to [D-Wave Documentation](https://docs.dwavesys.com/docs/latest/index.html) and forums.
+
+6. **Loop Over `num_reads`**
+    - For statistical validation, run your problem multiple times.
+
+
+
+```python
+# Sample code integrating all the above points
+from dwave.system import DWaveSampler, EmbeddingComposite
+import dimod
+
+Q = {(0, 0): -1, (1, 1): -1, (0, 1): 2}  # Step 2
+sampler = EmbeddingComposite(DWaveSampler())  # Step 3
+response = sampler.sample_qubo(Q, num_reads=10)  # Step 7
+
+for sample, energy in response.data(['sample', 'energy']):
+    print("Sample:", sample)
+    print("Energy:", energy)  # Step 4
+```
+
+###  Markdown
+
+```markdown
+# Quantum Computing Training Project
+
+## Exercise 1: Two Same Qubits
+
+### Objective
+In this exercise, we focus on penalizing two-qubit solutions in which the qubits have different values and favor solutions where qubits have the same values.
+
+### Technologies Used
+- D-Wave Quantum Annealer
+- Python3
+- QUBO
+
+### Code Snippet
+```python
+from dwave.system import DWaveSampler, EmbeddingComposite
+import dimod
+
+Q = {(0, 0): -1, (1, 1): -1, (0, 1): 2}
+sampler = EmbeddingComposite(DWaveSampler())
+response = sampler.sample_qubo(Q, num_reads=10)
+
+for sample, energy in response.data(['sample', 'energy']):
+    print("Sample:", sample)
+    print("Energy:", energy)
+```
+
+### Mathematical Concepts
+- QUBO Matrix: \( Q = -x_0^2 - x_1^2 + 2x_0x_1 \)
+- Energy: \( E = \sum Q_{ij}x_i x_j \)
+
+### Results
+The results provided the optimal solutions that minimize the energy, providing the ideal state of the qubits.
