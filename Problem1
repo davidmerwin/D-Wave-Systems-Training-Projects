@@ -1,3 +1,47 @@
+
+🔤 Title ====================================
+
+Exercise 1: Two Same - Qubo Sampling and Results
+
+📝 Description ==============================
+
+This code runs a problem using the DWaveSampler library, then prints each sample and energy of an array.
+
+'''
+Exercise 1
+To run the exercise 1 demo from the command-line, type the command:
+python two_same.py
+Read through the code and take a look at the structure of the program. Notice the basic parts:
+- Obtain a sampler/solver
+- Define the Q matrix
+- Run the problem, using the sampler/solver
+- Print the results
+In this exercise, we want to penalize the two qubit solutions in which the qubits have different values;
+we want to favor the two qubit solutions in which the qubits have the same values.In the results,
+'''
+# Exercise 1: Two Same
+
+# Import necessary libraries
+from dwave.system import DWaveSampler, EmbeddingComposite
+import dimod
+
+# Define the Q matrix
+Q = {(0, 0): -1, (1, 1): -1, (0, 1): 2}
+
+# Obtain a sampler/solver
+sampler = EmbeddingComposite(DWaveSampler())
+
+# Run the problem using the sampler/solver
+response = sampler.sample_qubo(Q, num_reads=10)
+
+# Print the results
+for sample, energy in response.data(['sample', 'energy']):
+    print("Sample:", sample)
+    print("Energy:", energy)
+    
+    
+
+
 ### Table of Keywords and Concepts
 
 | Keyword/Concept       | Description                                                                                                            | Python3 Example             | Mathematical Equation         |
@@ -108,3 +152,26 @@ for sample, energy in response.data(['sample', 'energy']):
 
 ### Results
 The results provided the optimal solutions that minimize the energy, providing the ideal state of the qubits.
+
+
+🏷️ Tags =====================================
+
+#RESPONSE, #Q_MATRIX, #SAMPLE_QUBO, #PYTHON_PROGRAMMING, #FRAMEWORK:_D-WAVE_OCEAN_SDK, #SAMPLE_QUBO, #DWAVESAMPLER, #NUM_READS, #DIMOD, #Q_MATRIX, #FACE-RECOGNITION, #EMBEDDINGCOMPOSITE, #NUM_READINGS, #NUMPY, #YOLO, #COMPUTER-VISION, #DWAVE_LIBRARY, #DATA_PRINTING, #SAMPLER, #SCIENTIFIC_ANALYSIS, #SAMPLER/SOLVER, #SAMPLE, #ENERGY
+
+👥 People ===================================
+
+David Merwin - davidmerwin1992@gmail.com
+
+🔗 Related Links ============================
+
+https://docs.ocean.dwavesys.com/en/latest/
+https://www.w3schools.com/python/default.asp
+https://www.w3schools.com/python/
+https://www.w3schools.com/python/python_strings.asp
+
+https://davidmerwin.pieces.cloud/?p=a56b44ab08
+
+https://gist.github.com/208629122f4970838b6d4bfa05a53380
+
+https://cloud.dwavesys.com/leap/
+
