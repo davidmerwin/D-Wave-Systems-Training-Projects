@@ -65,6 +65,16 @@ To get started with D-Wave Systems, you will need to:
 
 
 ## Projects and Studies during the Training:
+.
+├── project_cd24acdf-0a8f-44ae-a150-69ece39acec6
+│   ├── code
+│   ├── data
+│   └── ...
+└── project_6dbabf04-9a93-4534-9239-51d9edc7cbe2
+    ├── code
+    ├── data
+    └── ...
+
 
 ### Project ID: cd24acdf-0a8f-44ae-a150-69ece39acec6
 
@@ -152,7 +162,38 @@ The training project focuses on Number Partitioning. The objective is to partiti
 
 This training project on Number Partitioning successfully utilizes QUBO optimization to partition a set of numbers into two equal subsets. The energy analysis and sample data provide insights into the optimization results. The timing information highlights the performance characteristics of the solution process.
 
+-----------------------------------------------------------
 
+### Project ID: 6dbabf04-9a93-4534-9239-51d9edc7cbe2
+
+- **Training**: Embedding
+- **Solver**: Advantage_system 4.1
+- **Type**: QUBO
+- **Status**: Completed
+- **Submitted On**: 2023-05-18T22:14:41.533053Z
+- **Solved On**: 2023-05-18T22:14:41.702012Z
+- **Number of Reads**: 10
+
+#### Problem and Solution
+
+In this project, I focused on learning embedding techniques to better utilize the D-Wave quantum architecture. 
+
+```math
+Problem ID: 6dbabf04-9a93-4534-9239-51d9edc7cbe2
+Solver: Advantage_system 4.1
+Type: QUBO
+Status: Completed
+Submitted On: 2023-05-18T22:14:41.533053Z
+Solved On: 2023-05-18T22:14:41.702012Z
+Number of Reads: 10
+```
+
+#### QPU Sampling and Timing Information
+
+- **QPU_SAMPLING_TIME**: \( t_{\text{sample}} = 11.732 \, \mathrm{ms} \)
+- **QPU_ANNEAL_TIME_PER_SAMPLE**: \( \tau_{\text{anneal}} = 22 \, \mu \mathrm{s} \)
+- **QPU_READOUT_TIME_PER_SAMPLE**: \( t_{\text{readout}} = 75 \, \mu \mathrm{s} \)
+- (IN PROGRESS)
 
 
 
