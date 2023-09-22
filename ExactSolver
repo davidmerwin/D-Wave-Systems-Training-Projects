@@ -1,1 +1,28 @@
 <script src="https://gist.github.com/davidmerwin/ec9b043b5ed5b1bc02a11198b4efb4a8.js"></script>
+
+Check out this Gist for more details: [Gist Link](https://gist.github.com/davidmerwin/ec9b043b5ed5b1bc02a11198b4efb4a8)
+
+
+https://gist.github.com/ec9b043b5ed5b1bc02a11198b4efb4a8
+
+https://davidmerwin.pieces.cloud/?p=071f45aa12
+
+
+import dimod
+import dwavebinarycsp
+\# Define the graph
+edges $=\left[\left({ }^{\prime} 0^{\prime}, \prime^{\prime}\right),\left({ }^{\prime} 0^{\prime}, 2^{\prime}\right),\left(0^{\prime}, 3^{\prime}\right),\left(1^{\prime}, 2^{\prime}\right),\left(1^{\prime}, 3^{\prime}\right),\left(2^{\prime}, 3^{\prime}\right)\right]$
+\# Create a binary constraint satisfaction problem (CSP)
+csp = dwavebinarycsp. ConstraintSatisfactionProblem (dwavebinarycsp. BINARY)
+\# Add constraints for equal-sized subsets
+\# Add objective function for minimizing the number of edges between subsets
+\# Convert the CSP to a binary quadratic model (BQM)
+bqm = dwavebinarycsp.stitch (csp)
+\# Set up the solver and solve the problem
+solver = dimod. ExactSolver ()
+solution = solver. sample $($ bqm $)$
+\# Print the solutions
+for sample, energy in solution.data(['sample', 'energy']):
+print (sample, energy)
+
+
