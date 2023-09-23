@@ -432,6 +432,77 @@ The results were exported in a JSON format, showcasing various energy levels and
 - **QPU Delay Time per Sample:** 21 µs
 
 ---
+Creating a professional GitHub portfolio involves not only showcasing your code and projects but also making it easy for others to understand the significance and methodology of your work. Given your interest in D-Wave Systems and quantum computing, you can use Markdown to create an organized and visually appealing portfolio. Below is an example Markdown text to add to your `README.md` or project-specific `README.md` file on GitHub.
+
+---
+
+### Project ID: 43303521-9ac7-4cee-995e-71cf71268990
+## Number Partitioning Algorithm 
+
+
+### Overview
+
+This project aims to solve the Number Partitioning problem by using D-Wave's quantum annealing technology. 
+
+> **Mathematical Background**: The Number Partitioning problem can be represented as a QUBO (Quadratic Unconstrained Binary Optimization) problem with a Hamiltonian \( H = \sum_{i,j} a_{ij} x_i x_j \), where \( x_i \) are binary variables and \( a_{ij} \) are elements of a matrix that represents the problem constraints.
+
+### Technologies Used
+
+- Python3
+- Ocean SDK
+- D-Wave Leap Quantum Cloud Service
+
+
+### Methodology
+
+1. **Problem Formulation**: Transform the Number Partitioning problem into a QUBO problem.
+2. **Quantum Annealing**: Utilize D-Wave's quantum annealer to find the optimal solution.
+3. **Data Analysis**: Analyze the output for different problem instances.
+
+
+
+### Results
+
+The results were represented in terms of binary variables and energy states:
+
+| Index | 702 | 732 | 747 | 762 | 777 | ... | 5238 | Energy |
+|-------|-----|-----|-----|-----|-----|-----|------|--------|
+| 0     | 0   | 0   | 0   | 1   | 0   | ... | 1    | -6889.0|
+| 1     | 1   | 1   | 1   | 0   | 1   | ... | 0    | -6889.0|
+| ...   | ... | ... | ... | ... | ... | ... | ...  | ...    |
+
+> **Mathematical Insight**: The energy values indicate the quality of the solutions. Lower energy values represent better solutions according to the Hamiltonian \( H \).
+
+#### Performance Metrics
+
+- **QPU Sampling Time**: \(11.688 \, \text{ms}\)
+- **Post-Processing Overhead Time**: \(3.737 \, \text{ms}\)
+- **QPU Anneal Time Per Sample**: \(20 \, \mu \text{s}\)
+- **Total Post-Processing Time**: \( ... \)
+
+
+
+### Code Snippets
+
+Here is an illustrative Python3 snippet for formulating the QUBO matrix:
+
+```python
+from dimod import BinaryQuadraticModel
+
+# Create an empty Binary Quadratic Model
+bqm = BinaryQuadraticModel('BINARY')
+
+# Define QUBO interactions (Example values)
+qubo_interactions = {(0, 0): -1, (1, 1): -1, (0, 1): 2}
+
+# Add interactions to BQM
+bqm.add_interactions_from(qubo_interactions)
+```
+
+> The above code sets up the QUBO matrix to represent the problem on the D-Wave quantum annealer.
+
+
+---
 
 ## Contact Information
 
