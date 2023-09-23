@@ -6,5 +6,5 @@ In this exercise, we want to penalize the two qubit solutions in which the qubit
 
 In the results; you should notice that the solutions $(0.1)$ and $(10)$ have lower energy than the solutions $(0$ ) and (1 1).
 '''
-![Antenna Graph](https://cdn.mathpix.com/snip/images/YV_bKgioJhuYz-vaRKUIjLRfYO9LtZrvLa373eWiUZU.original.fullsize.png)
+![](https://cdn.mathpix.com/snip/images/YV_bKgioJhuYz-vaRKUIjLRfYO9LtZrvLa373eWiUZU.original.fullsize.png)
 
