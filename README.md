@@ -221,7 +221,122 @@ Number of Reads: 10
 - **QPU_READOUT_TIME_PER_SAMPLE**: \( t_{\text{readout}} = 75 \, \mu \mathrm{s} \)
 - (IN PROGRESS)
 
+------
 
+# Training Project - Number Partitioning
+
+**ID:** f9046ca2-9cc9-40c1-8607-f26e4de62862
+
+**SOLVED_ON:** 2023-05-18T23:05:11.291053Z
+
+**LABEL:** Copy Value
+
+**STATUS:** COMPLETED
+
+**SOLVER:** Advantage_system 4.1
+
+**SUBMITTED_BY:** Zi2q-7cdd45d9...
+
+**TYPE:** qubo
+
+**NUM_READS:** 100
+
+**SUBMITTED_ON:** 2023-05-18T23:05:11.109121Z
+
+## Sample Set
+
+The training project involved a number partitioning problem. Here is a sample set in JSON format:
+
+```json
+[
+  {
+    "1831": 0,
+    "1846": 0,
+    "1860": 0,
+    "1875": 0,
+    "...": "...",
+    "3204": 1,
+    "energy": -9756.0,
+    "num_oc.": 31
+  },
+  {
+    "1831": 1,
+    "1846": 1,
+    "1860": 1,
+    "1875": 1,
+    "...": "...",
+    "3204": 0,
+    "energy": -9756.0,
+    "num_oc.": 58
+  },
+  {
+    "1831": 0,
+    "1846": 0,
+    "1860": 0,
+    "1875": 0,
+    "...": "...",
+    "3204": 1,
+    "energy": -9406.0,
+    "num_oc.": 1
+  },
+  {
+    "1831": 1,
+    "1846": 1,
+    "1860": 1,
+    "1875": 1,
+    "...": "...",
+    "3204": 0,
+    "energy": -9406.0,
+    "num_oc.": 7
+  },
+  {
+    "1831": 0,
+    "1846": 0,
+    "1860": 0,
+    "1875": 0,
+    "...": "...",
+    "3204": 1,
+    "energy": -9067.0,
+    "num_oc.": 1
+  },
+  {
+    "1831": 0,
+    "1846": 0,
+    "1860": 0,
+    "1875": 0,
+    "...": "...",
+    "3204": 1,
+    "energy": -9021.0,
+    "num_oc.": 1
+  },
+  {
+    "1831": 0,
+    "1846": 0,
+    "1860": 0,
+    "1875": 0,
+    "...": "...",
+    "3204": 1,
+    "energy": -8993.0,
+    "num_oc.": 1
+  }
+]
+```
+
+## Performance Metrics
+
+- **QPU_SAMPLING_TIME:** 9.024 ms
+- **TOTAL_POST_PROCESSING_TIME:** 236 μs
+- **QPU_ANNEAL_TIME_PER_SAMPLE:** 20 μs
+- **POST_PROCESSING_OVERHEAD_TIME:** 236 μs
+- **QPU_READOUT_TIME_PER_SAMPLE:** 50 μs
+- **QPU_ACCESS_TIME:** 24.780 ms
+- **QPU_ACCESS_OVERHEAD_TIME:** 2.061 ms
+- **QPU_PROGRAMMING_TIME:** 15.756 ms
+- **QPU_DELAY_TIME_PER_SAMPLE:** 21 μs
+
+Please note that these performance metrics are indicative of the execution time and overhead involved in solving the number partitioning problem using the Advantage_system 4.1 solver.
+
+For more information on the Advantage_system 4.1 solver, you can refer to the [D-Wave website](https://www.dwavesys.com/solutions-and-products/systems/) or other relevant resources.
 
 ## Contact Information
 
