@@ -502,11 +502,791 @@ bqm.add_interactions_from(qubo_interactions)
 > The above code sets up the QUBO matrix to represent the problem on the D-Wave quantum annealer.
 
 
+------------
+
+
+## Table of Contents
+
+- [About Me](#about-me)
+- [D-Wave Systems Quantum Computing Training](#d-wave-systems-quantum-computing-training)
+  - [Project Overview](#project-overview)
+  - [Technical Metrics](#technical-metrics)
+  - [Code Snippets](#code-snippets)
+- [Contact](#contact)
+
+
+### Project Overview
+
+**Title:**  
+Training - Number Partitioning
+
+**ID:**  
+`79d129a2-12c3-4577-b14d-a5be2aa595a2`
+
+**Solver Used:**  
+Advantage_system4.1
+
+**Type:**  
+QUBO (Quadratic Unconstrained Binary Optimization)
+
+**Status:**  
+COMPLETED
+
+**Submitted On:**  
+2023-05-18T23:13:34.598117Z
+
+**Solved On:**  
+2023-05-18T23:13:34.772877Z
+
+**Submitted By:**  
+Zi2q-7cdd45d9...
+
+**Number of Reads:**  
+100
+
+### Technical Metrics
+
+#### Sampling Time Metrics
+
+- **QPU Sampling Time:**  
+  \( 14.184 \, \text{ms} \)
+- **Post-Processing Overhead Time:**  
+  \( 815 \, \mu \text{s} \)
+
+#### QPU Timing Metrics
+
+- **QPU Anneal Time Per Sample:**  
+  \( 20 \, \mu \text{s} \)
+- **Total Post-Processing Time:**  
+  \( 815 \, \mu \text{s} \)
+- **QPU Readout Time Per Sample:**  
+  \( 101 \, \mu \text{s} \)
+  
+#### Access Time Metrics
+
+- **QPU Access Time:**  
+  \( 29.940 \, \text{ms} \)
+- **QPU Access Overhead Time:**  
+  \( 2.744 \, \text{ms} \)
+- **QPU Programming Time:**  
+  \( 15.756 \, \text{ms} \)
+- **QPU Delay Time Per Sample:**  
+  \( 21 \, \mu \text{s} \)
+
+### Code Snippets
+
+
+
 ---
 
-## Contact Information
+# D-Wave Systems Quantum Computing Training Project
 
-- **Email**: davidmerwin1992@gmail.com
-- **LinkedIn**: 
+## Metadata
+
+- **Solver**: Advantage_system4.1
+- **Type**: QUBO
+- **ID**: aOc53d79-eab6-4661-8449-69d7c667fadb
+- **Submitted On**: 2023-05-18T23:24:01.849039Z
+- **Solved On**: 2023-05-18T23:24:02.052210Z
+- **Status**: Completed
+- **Submitted By**: Zi2q-7cdd45d9...
+- **Number of Reads**: 100
+
+## Performance Metrics
+
+\[
+\begin{align*}
+\text{QPU Sampling Time} &: 10.704 \, \text{ms} \\
+\text{QPU Anneal Time per Sample} &: 20 \, \mu \text{s} \\
+\text{QPU Readout Time per Sample} &: 67 \, \mu \text{s} \\
+\text{QPU Access Time} &: 26.462 \, \text{ms} \\
+\text{QPU Access Overhead Time} &: 516 \, \mu \text{s} \\
+\text{QPU Programming Time} &: 15.758 \, \text{ms} \\
+\text{QPU Delay Time per Sample} &: 21 \, \mu \text{s} \\
+\text{Post-Processing Overhead Time} &: 1.927 \, \text{ms} \\
+\text{Total Post-Processing Time} &: 1.927 \, \text{ms} \\
+\end{align*}
+\]
+
+## Solution
+
+Here are some of the optimized solutions:
+
+\[
+\begin{array}{cccc}
+1899 & 1914 & 1929 & \ldots \\
+0 & 1 & 0 & \ldots \\
+\vdots & \vdots & \vdots & \ddots \\
+\end{array}
+\]
+
+Energy Level: -6889.0 to -6355.94833
+
+## Code
+
+---------
+
+
+## Overview
+
+- **Project ID**: d54e319b-20ba-4fdd-8341-aa8430e83fbb
+- **Solver**: Advantage_system4.1
+- **Type**: QUBO (Quadratic Unconstrained Binary Optimization)
+- **Submitted On**: 2023-05-18
+- **Solved On**: 2023-05-18
+- **Status**: COMPLETED
+- **Submitted By**: Zi2q-7cdd45d9...
+- **Number of Reads**: 100
+
+## Performance Metrics
+
+- **QPU Sampling Time**: N/A
+- **Post-Processing Overhead Time**: 9.264 ms
+- **Total Post-Processing Time**: 711μs
+- **QPU Readout Time Per Sample**: 52μs
+- **QPU Access Time**: 25.022 ms
+- **QPU Access Overhead Time**: 827μs
+- **QPU Programming Time**: 15.758 ms
+- **QPU Delay Time Per Sample**: 21μs
+
+## Results Summary
+
+The output energies ranged from -6889.0 to -6313.0, with varying numbers of occurrences for each unique solution.
+
+| Energy  | Number of Occurrences |
+| ------- | --------------------- |
+| -6889.0 | 2                     |
+| -6888.0 | 16                    |
+| -6880.0 | 15                    |
+| ...     | ...                   |
+| -6313.0 | 1                     |
+
+## Python Code for Processing
+
+The Python code to retrieve and process the quantum results was as follows.
+
+```python
+# Python code to process D-Wave output
+from dwave.system import DWaveSampler, EmbeddingComposite
+
+# Initialize sampler and composite
+sampler = DWaveSampler(solver={'qpu': True})
+composite = EmbeddingComposite(sampler)
+
+# Define QUBO problem (example)
+Q = {(0, 0): -1, (1, 1): -1, (0, 1): 2}
+
+# Sample
+sampleset = composite.sample_qubo(Q, num_reads=100)
+
+# Process results
+for sample, energy, occurrences in sampleset.data(['sample', 'energy', 'num_occurrences']):
+    print(sample, "Energy:", energy, "Occurrences:", occurrences)
+```
+
+## Mathematical Expression
+
+The energy function \( E \) in a QUBO problem is given by
+
+\[
+E = \sum_{i} q_{i} x_{i} + \sum_{i < j} q_{ij} x_{i} x_{j}
+\]
+
+Here, \( q_{i} \) and \( q_{ij} \) are coefficients of the QUBO matrix, and \( x_{i} \) are binary variables (0 or 1).
+
+
+-------
+
+
+```markdown
+# D-Wave Systems Quantum Computing: Session 2
+
+## Table of Contents
+1. [Overview](#overview)
+2. [Project Details](#project-details)
+3. [Solver Metrics](#solver-metrics)
+4. [Results and Analysis](#results-and-analysis)
+5. [Mathematical Context](#mathematical-context)
+6. [Python3 Code](#python3-code)
+
+
+
+## Project Details
+
+### Problem Statement
+The optimization problem remains in the QUBO framework, which is ideal for solving problems like the Traveling Salesman Problem, Maximum Cut, etc.
+
+### Solution Methodology
+The problem was solved using the Quantum Annealing algorithm, optimized using the QUBO method.
+
+
+## Solver Metrics
+
+### Basic Metrics
+- **Solver**: Advantage_system4.1
+- **Type**: qubo
+- **Status**: COMPLETED
+- **Submitted By**: Zi2q-7cdd45d9...
+- **ID**: cb05cbd3-e180-4919-958a-98b2a95bb94d
+
+### Timing Metrics
+- **QPU Sampling Time**: \(8.176 \, \text{ms}\)
+- **QPU Anneal Time Per Sample**: \(20 \, \mu \text{s}\)
+- **QPU Readout Time Per Sample**: \(41 \, \mu \text{s}\)
+- **QPU Access Time**: \(23.937 \, \text{ms}\)
+- **QPU Access Overhead Time**: \(1.503 \, \text{ms}\)
+- **QPU Programming Time**: \(15.761 \, \text{ms}\)
+- **QPU Delay Time Per Sample**: \(21 \, \mu \text{s}\)
+- **Total Post-Processing Time**: \(802 \, \mu \text{s}\)
+- **Post-Processing Overhead Time**: \(802 \, \mu \text{s}\)
+
+
+## Results and Analysis
+
+The output results show different configurations with respective energies and occurrences. The lowest energy configuration is our area of interest.
+
+```
+1144 | 1234 | 3846 | 3905 | energy  | num_oc.
+-----|------|------|------|---------|--------
+  0  |  1   |  1   |  0   |  -1.0   |   53
+  0  |  1   |  1   |  1   |  -1.0   |   47
+```
+
+
+## Mathematical Context
+
+The energy function \(E\) can be expressed as:
+
+\[
+E(x) = \sum_{i=1}^{4} \sum_{j=1}^{4} Q_{ij} x_i x_j
+\]
+
+Here, \(Q_{ij}\) represents the coefficients in the QUBO problem, and \(x_i\) are the binary variables. Minimizing \(E(x)\) provides us with the optimal solution.
+
+
+
+## Python3 Code
+
+Here's a Python3 example using D-Wave's SDK:
+
+```python
+from dwave.system import DWaveSampler, EmbeddingComposite
+
+# Define the QUBO dictionary
+Q = {(1144, 1144): 1, (1234, 1234): -2, (3846, 3846): 3, (3905, 3905): -4}
+
+# Use the D-Wave sampler
+sampler = EmbeddingComposite(DWaveSampler())
+response = sampler.sample_qubo(Q, num_reads=100)
+
+# Output results
+for sample, energy, num_oc in response.data(['sample', 'energy', 'num_occurrences']):
+    print(sample, "Energy: ", energy, "Occurrences: ", num_oc)
+```
+
+
+--------
+
+# D-Wave Systems Quantum Computing Training Project
+
+## Table of Contents
+1. [Overview](#overview)
+2. [Project Details](#project-details)
+3. [Solver Metrics](#solver-metrics)
+4. [Results and Analysis](#results-and-analysis)
+5. [Mathematical Context](#mathematical-context)
+6. [Python3 Code](#python3-code)
+
+
+
+## Project Details
+
+### Problem Statement
+The objective of this project was to explore the quantum annealing capabilities for solving number partitioning problems. Number partitioning is a computationally complex problem and provides an excellent use-case for quantum computing.
+
+### Solution Methodology
+We utilized D-Wave's Quantum Annealing Solver to solve the given problem. The optimization process was carried out using the Quadratic Unconstrained Binary Optimization (QUBO) framework.
+
+
+## Solver Metrics
+
+### Basic Metrics
+- **Solver**: Advantage_system4.1
+- **Type**: qubo
+- **Status**: COMPLETED
+- **Submitted By**: Zi2q-7cdd45d9...
+- **ID**: 98fd1adb-7c4e-48e2-9172-8513b098d505
+
+### Timing Metrics
+- **QPU Sampling Time**: 9.040 ms
+- **QPU Anneal Time Per Sample**: 20 µs
+- **QPU Readout Time Per Sample**: 50 µs
+- **QPU Access Time**: 24.801 ms
+- **QPU Access Overhead Time**: 2.498 ms
+- **QPU Programming Time**: 15.761 ms
+- **QPU Delay Time Per Sample**: 21 µs
+- **Total Post-Processing Time**: 587 µs
+- **Post-Processing Overhead Time**: 587 µs
+
+
+## Results and Analysis
+
+The QUBO problem was solved using 100 reads, and the output included several configurations with different energy levels. The lowest energy configuration provides the most optimal solution.
+
+```
+energy  | num_oc. | 2473 | 2488 | 2503 | ... | 5428
+--------|---------|------|------|------|-----|------
+-6889.0 |    1    |  0   |  0   |  0   | ... |  1
+-6889.0 |    1    |  0   |  1   |  0   | ... |  0
+-6888.0 |    4    |  1   |  1   |  0   | ... |  1
+...     |   ...   | ...  | ...  | ...  | ... | ...
+```
+
+
+
+## Mathematical Context
+
+The energy function \(E\) in QUBO is usually represented as:
+
+\[
+E(x) = \sum_{i,j} Q_{ij} x_i x_j
+\]
+
+where \(Q_{ij}\) are the elements of a QUBO matrix and \(x_i, x_j\) are the binary variables. The objective is to find \(x\) that minimizes \(E(x)\).
+
+
+
+## Python3 Code
+
+Here is a sample Python3 code snippet to perform a quantum annealing task using D-Wave's Python SDK:
+
+```python
+from dwave.system import DWaveSampler, EmbeddingComposite
+
+# Define QUBO dictionary
+Q = {(0, 0): -1, (0, 1): 2, (1, 1): -1}
+sampler = EmbeddingComposite(DWaveSampler())
+response = sampler.sample_qubo(Q, num_reads=100)
+
+# Extract results
+for sample, energy, num_oc in response.data(['sample', 'energy', 'num_occurrences']):
+    print(sample, "Energy: ", energy, "Occurrences: ", num_oc)
+```
+
+---
+
+# D-Wave Systems Quantum Computing Training Project
+
+## Table of Contents
+1. [Overview](#overview)
+2. [Project Details](#project-details)
+3. [Solver Metrics](#solver-metrics)
+4. [Results and Analysis](#results-and-analysis)
+5. [Mathematical Context](#mathematical-context)
+6. [Python3 Code](#python3-code)
+
+
+
+
+### Solution Methodology
+We utilized D-Wave's Quantum Annealing Solver to solve the given problem. The optimization process was carried out using the Quadratic Unconstrained Binary Optimization (QUBO) framework.
+
+
+
+## Solver Metrics
+
+### Basic Metrics
+- **Solver**: Advantage_system4.1
+- **Type**: qubo
+- **Status**: COMPLETED
+- **Submitted By**: Zi2q-7cdd45d9...
+- **ID**: 98fd1adb-7c4e-48e2-9172-8513b098d505
+
+### Timing Metrics
+- **QPU Sampling Time**: 9.040 ms
+- **QPU Anneal Time Per Sample**: 20 µs
+- **QPU Readout Time Per Sample**: 50 µs
+- **QPU Access Time**: 24.801 ms
+- **QPU Access Overhead Time**: 2.498 ms
+- **QPU Programming Time**: 15.761 ms
+- **QPU Delay Time Per Sample**: 21 µs
+- **Total Post-Processing Time**: 587 µs
+- **Post-Processing Overhead Time**: 587 µs
+
+
+## Results and Analysis
+
+The QUBO problem was solved using 100 reads, and the output included several configurations with different energy levels. The lowest energy configuration provides the most optimal solution.
+
+```
+energy  | num_oc. | 2473 | 2488 | 2503 | ... | 5428
+--------|---------|------|------|------|-----|------
+-6889.0 |    1    |  0   |  0   |  0   | ... |  1
+-6889.0 |    1    |  0   |  1   |  0   | ... |  0
+-6888.0 |    4    |  1   |  1   |  0   | ... |  1
+...     |   ...   | ...  | ...  | ...  | ... | ...
+```
+
+
+
+## Mathematical Context
+
+The energy function \(E\) in QUBO is usually represented as:
+
+\[
+E(x) = \sum_{i,j} Q_{ij} x_i x_j
+\]
+
+where \(Q_{ij}\) are the elements of a QUBO matrix and \(x_i, x_j\) are the binary variables. The objective is to find \(x\) that minimizes \(E(x)\).
+
+
+
+## Python3 Code
+
+Here is a sample Python3 code snippet to perform a quantum annealing task using D-Wave's Python SDK:
+
+```python
+from dwave.system import DWaveSampler, EmbeddingComposite
+
+# Define QUBO dictionary
+Q = {(0, 0): -1, (0, 1): 2, (1, 1): -1}
+sampler = EmbeddingComposite(DWaveSampler())
+response = sampler.sample_qubo(Q, num_reads=100)
+
+# Extract results
+for sample, energy, num_oc in response.data(['sample', 'energy', 'num_occurrences']):
+    print(sample, "Energy: ", energy, "Occurrences: ", num_oc)
+```
+
+-----------
+
+
+```markdown
+# D-Wave Systems Quantum Computing: Session 2
+
+## Table of Contents
+1. [Overview](#overview)
+2. [Project Details](#project-details)
+3. [Solver Metrics](#solver-metrics)
+4. [Results and Analysis](#results-and-analysis)
+5. [Mathematical Context](#mathematical-context)
+6. [Python3 Code](#python3-code)
+
+
+## Project Details
+
+### Problem Statement
+The optimization problem remains in the QUBO framework, which is ideal for solving problems like the Traveling Salesman Problem, Maximum Cut, etc.
+
+### Solution Methodology
+The problem was solved using the Quantum Annealing algorithm, optimized using the QUBO method.
+
+## Solver Metrics
+
+### Basic Metrics
+- **Solver**: Advantage_system4.1
+- **Type**: qubo
+- **Status**: COMPLETED
+- **Submitted By**: Zi2q-7cdd45d9...
+- **ID**: cb05cbd3-e180-4919-958a-98b2a95bb94d
+
+### Timing Metrics
+- **QPU Sampling Time**: \(8.176 \, \text{ms}\)
+- **QPU Anneal Time Per Sample**: \(20 \, \mu \text{s}\)
+- **QPU Readout Time Per Sample**: \(41 \, \mu \text{s}\)
+- **QPU Access Time**: \(23.937 \, \text{ms}\)
+- **QPU Access Overhead Time**: \(1.503 \, \text{ms}\)
+- **QPU Programming Time**: \(15.761 \, \text{ms}\)
+- **QPU Delay Time Per Sample**: \(21 \, \mu \text{s}\)
+- **Total Post-Processing Time**: \(802 \, \mu \text{s}\)
+- **Post-Processing Overhead Time**: \(802 \, \mu \text{s}\)
+
+
+## Results and Analysis
+
+The output results show different configurations with respective energies and occurrences. The lowest energy configuration is our area of interest.
+
+```
+1144 | 1234 | 3846 | 3905 | energy  | num_oc.
+-----|------|------|------|---------|--------
+  0  |  1   |  1   |  0   |  -1.0   |   53
+  0  |  1   |  1   |  1   |  -1.0   |   47
+```
+
+
+## Mathematical Context
+
+The energy function \(E\) can be expressed as:
+
+\[
+E(x) = \sum_{i=1}^{4} \sum_{j=1}^{4} Q_{ij} x_i x_j
+\]
+
+Here, \(Q_{ij}\) represents the coefficients in the QUBO problem, and \(x_i\) are the binary variables. Minimizing \(E(x)\) provides us with the optimal solution.
+
+
+## Python3 Code
+
+Here's a Python3 example using D-Wave's SDK:
+
+```python
+from dwave.system import DWaveSampler, EmbeddingComposite
+
+# Define the QUBO dictionary
+Q = {(1144, 1144): 1, (1234, 1234): -2, (3846, 3846): 3, (3905, 3905): -4}
+
+# Use the D-Wave sampler
+sampler = EmbeddingComposite(DWaveSampler())
+response = sampler.sample_qubo(Q, num_reads=100)
+
+# Output results
+for sample, energy, num_oc in response.data(['sample', 'energy', 'num_occurrences']):
+    print(sample, "Energy: ", energy, "Occurrences: ", num_oc)
+```
+
+
+
+
+
+```markdown
+
+
+![Quantum Computing](quantum-computing-image.jpg) <!--  image -->
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Project Summary](#project-summary)
+3. [Technologies](#technologies)
+4. [Solver Metrics](#solver-metrics)
+5. [Results](#results)
+6. [Mathematical Context](#mathematical-context)
+7. [Source Code](#source-code)
+8. [Contact](#contact)
+
+
+## Project Summary
+**Problem Statement:** Quantum Optimization for Real-world Problems  
+**Solution Methodology:** Quantum Annealing  
+**Solver Used:** D-Wave Advantage_system4.1  
+**Status:** Completed
+
+
+## Technologies
+- Python 3
+- D-Wave Ocean SDK
+- NumPy
+- Mathematical Formulation (QUBO)
+
+
+
+## Solver Metrics
+
+### Basic Metrics
+- **Solver**: Advantage_system4.1
+- **Type**: qubo
+- **Status**: COMPLETED
+- **ID**: d1d2971f-70f0-4db4-aec4-7cb25734aedb
+- **Submitted By**: Zi2q-7cdd45d9...
+- **Submitted On**: 2023-05-19T02:46:11.148532Z
+- **Num Reads**: 100
+
+### Timing Metrics
+- **QPU Sampling Time**: \(9.346 \, \text{ms}\)
+- **QPU Anneal Time Per Sample**: \(20 \, \mu \text{s}\)
+- **QPU Readout Time Per Sample**: \(53 \, \mu \text{s}\)
+- **QPU Access Time**: \(25.107 \, \text{ms}\)
+- **QPU Access Overhead Time**: \(1.258 \, \text{ms}\)
+- **QPU Programming Time**: \(15.761 \, \text{ms}\)
+- **QPU Delay Time Per Sample**: \(21 \, \mu \text{s}\)
+- **Total Post-Processing Time**: \(3.709 \, \text{ms}\)
+- **Post-Processing Overhead Time**: \(3.709 \, \text{ms}\)
+
+
+## Results
+
+The output was an optimal solution for our problem with the following attributes:
+
+\[
+\begin{aligned}
+& 173243134463 \quad \text {energy num_oc.} \\
+& 0 \quad 1 \quad 1 \quad 0 \quad -1.0 \quad 100 \\
+\end{aligned}
+\]
+
+
+## Mathematical Context
+
+The energy function \(E\) can be modeled as:
+
+\[
+E(x) = \sum_{i=1}^{n} \sum_{j=1}^{n} Q_{ij} x_i x_j
+\]
+
+where \(Q_{ij}\) are the coefficients in the QUBO problem, and \(x_i\) are the binary variables.
+
+
+
+##  Code
+
+
+
+```python
+# Sample Python code using D-Wave SDK
+from dwave.system import DWaveSampler, EmbeddingComposite
+Q = {(0, 0): 1, (1, 1): -1, (2, 2): 1}
+sampler = EmbeddingComposite(DWaveSampler())
+response = sampler.sample_qubo(Q, num_reads=100)
+```
+
+---
+
+
+```markdown
+
+
+## Project ID: a4253abc-9a1b-4b8f-b5e3-4fb85b11cfdf
+
+### Meta Information
+- **Solver**: Advantage_system4.1
+- **Type**: qubo
+- **Submitted On**: 2023-05-18T20:10:44.740770Z
+- **Solved On**: 2023-05-18T20:10:45.314233Z
+- **Status**: COMPLETED
+- **Submitted By**: Zi2q-7cdd45d9...
+- **Number of Reads**: 10
+
+
+
+### Project Overview
+
+
+### Results
+```latex
+\begin{aligned}
+& 997 1012 1042 4309 4340 4385 4400 \text{ energy num_oc. } \\
+& 0   0    0    1    1    0    1   -3.0       1 \\
+& 1   0    1    0    0    1    1    0   -3.0       5 \\
+& 2   0    1    0    0    1    0    1   -3.0       2 \\
+& 3   0    0    0    1    1    1    0   -3.0       2 \\
+& \text{['BINARY', 4 rows, 10 samples, 7 variables]}
+\end{aligned}
+```
+
+### QPU Metrics
+- **QPU Sampling Time**: 891 µs
+- **Total Post-Processing Time**: 141 µs
+- **QPU Anneal Time per Sample**: 141 µs
+- **Post-Processing Overhead Time**: 141 µs
+- **QPU Readout Time per Sample**: 49 µs
+- **QPU Access Time**: 16.649 ms
+- **QPU Access Overhead Time**: 741 µs
+- **QPU Programming Time**: 15.757 ms
+- **QPU Delay Time per Sample**: 21 µs
+
+
+### Code Snippets
+
+
+### Conclusion
+
+
+```
+
+---
+
+# Quantum Computing Portfolio
+
+## Table of Contents
+1. [About Me](#about-me)
+2. [Projects](#projects)
+    - [Graph Mapping with D-Wave Systems](#graph-mapping)
+3. [Technologies Used](#technologies-used)
+4. [Contact](#contact)
+5. [License](#license)
+
+---
+
+
+## Projects
+
+### Graph Mapping with D-Wave Systems
+
+![Open in Leap IDE](https://cdn-assets.cloud.dwavesys.com/shared/latest/badges/leapide.svg)](https://ide.dwavesys.io/#https://github.com/dwave-training/graph-mapping)
+
+**Overview**:  
+This project leverages D-Wave Systems to solve graph mapping problems. Specifically, it aims to solve the antenna selection problem using quantum annealing.
+
+#### Exercise Highlights
+
+- **Exercise 1**: Initialization  
+  - Token authentication for D-Wave's Leap IDE.
+  - Introduction to `dwave-networkx`.
+
+- **Exercise 2**: Simulated Annealing  
+  - Implementing the simulated annealing algorithm.
+
+- **Exercise 3**: Problem Modification  
+  - Modified the original problem to solve for minimum vertex cover.
+
+#### Core Technologies
+
+- NetworkX
+- D-Wave NetworkX
+- D-Wave System's QPU
+- Matplotlib for visualization
+
+#### Code Snippets
+
+```python
+# Importing essential packages
+import networkx as nx
+from dwave.system import DWaveSampler, EmbeddingComposite
+
+# Creating the graph structure
+G = nx.Graph()
+G.add_edges_from([(1, 2), (1, 3), (2, 3), (3, 4), (3, 5), (4, 5), (4, 6), (5, 6), (6, 7)])
+
+# Defining sampler
+sampler = EmbeddingComposite(DWaveSampler())
+```
+
+#### Outputs
+
+- **Original Graph**: ![Original Graph](images/original_graph.png)
+- **Solution Graph**: ![Solution Graph](images/solution_graph.png)
+
+#### References
+
+- [D-Wave Collection of Examples](https://github.com/dwave-examples/antenna-selection)
+- [Ocean Documentation](https://docs.ocean.dwavesys.com/en/stable/)
+
+---
+
+## Technologies Used
+
+- Python
+- D-Wave Systems
+- NetworkX
+- Matplotlib
+- Leap IDE
+
+
+
+---
+## Contact
+
+Feel free to connect with me:
+
+- 📧 Email: [your_email@gmail.com](mailto:your_email@gmail.com)
+- 💼 LinkedIn: [your_linkedin_profile](https://linkedin.com/in/your_linkedin_profile)
+- 🌐 Portfolio: [your_portfolio_site](https://your_portfolio_site.com)
+
+
+
+Thank you for visiting my portfolio! 😊
+```
+
+
   
 Feel free to reach out if you have any questions or would like to collaborate!
