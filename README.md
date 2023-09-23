@@ -338,6 +338,59 @@ Please note that these performance metrics are indicative of the execution time 
 
 For more information on the Advantage_system 4.1 solver, you can refer to the [D-Wave website](https://www.dwavesys.com/solutions-and-products/systems/) or other relevant resources.
 
+----------------
+# GitHub Portfolio
+
+## D-Wave Systems Quantum Computing Training Project
+
+### Problem Parameters
+
+- ID: 10fd40b1-9ef5-4ea0-9e97-2c5a14c2c36d
+    - The unique identifier for this problem.
+- Label: Copy Value
+    - The label given to this problem.
+- Training: Number Partitioning
+    - The type of training this problem belongs to, which is Number Partitioning in this case.
+- Solver: Advantage_system 4.1
+    - The solver used to solve this problem, which is the Advantage_system 4.1.
+- Type: QUBO
+    - The type of the problem formulation, which is Quadratic Unconstrained Binary Optimization (QUBO) in this case.
+- Submitted On: 2023-05-18T23:05:19.742716Z
+    - The date and time when this problem was submitted.
+- Solved On: 2023-05-18T23:05:19.967823Z
+    - The date and time when this problem was solved.
+- Status: COMPLETED
+    - The status of this problem, which is COMPLETED.
+- Submitted By: Zi2q-7cdd45d9...
+    - The identifier of the user who submitted this problem.
+- Num Reads: 100
+    - The number of reads performed on the solver.
+
+### Solution Timing
+
+- QPU Sampling Time: 11.640 ms
+    - The total time taken by the Quantum Processing Unit (QPU) to perform the sampling operation, which is 11.640 milliseconds.
+- QPU Anneal Time per Sample: 20 μs
+    - The time taken by the QPU for each sample during the annealing process, which is 20 microseconds.
+- QPU Readout Time per Sample: 76 μs
+    - The time taken by the QPU for each sample during the readout process, which is 76 microseconds.
+- QPU Access Time: 27.397 ms
+    - The total time taken to access the QPU, including annealing time, readout time, and other overheads, which is 27.397 milliseconds.
+- QPU Access Overhead Time: 1.938 ms
+    - The overhead time incurred while accessing the QPU, which is 1.938 milliseconds.
+- QPU Programming Time: 15.757 ms
+    - The time taken to program the QPU with the problem, which is 15.757 milliseconds.
+- QPU Delay Time per Sample: 21 μs
+    - The delay time between each sample during the QPU operation, which is 21 microseconds.
+- Post Processing Overhead Time: 427 μs
+    - The overhead time incurred during post-processing, which is 427 microseconds.
+- Total Post Processing Time: 427 μs
+    - The total time taken for post-processing, which is 427 microseconds.
+
+--------------------
+
+
+
 ## Contact Information
 
 - **Email**: davidmerwin1992@gmail.com
