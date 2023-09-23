@@ -390,6 +390,48 @@ For more information on the Advantage_system 4.1 solver, you can refer to the [D
 --------------------
 
 
+## Table of Contents
+- [Project Details](#project-details)
+- [Problem Parameters and Solution Timing](#problem-parameters-and-solution-timing)
+- [QPU Analytics](#qpu-analytics)
+- [Installation and Usage](#installation-and-usage)
+- [License](#license)
+
+## Project Details
+- **ID:** 4838543d-7640-4f98-ba84-45d171c10911
+- **Solver:** Advantage_system4.1
+- **Type:** qubo
+- **Status:** Completed
+- **Submitted By:** Zi2q-7cdd45d9...
+- **Number of Reads:** 100
+
+## Problem Parameters and Solution Timing
+### Sample Set
+The results were exported in a JSON format, showcasing various energy levels and number occurrences:
+
+\[
+\begin{array}{lrrrrlrrr}
+& 2465 & 2480 & 2495 & 2510 & \ldots & 4048 & \text{energy} & \text{num\_oc} \\
+0 & 0 & 0 & 0 & 0 & \ldots & 1 & -9713.0 & 21 \\
+1 & 1 & 1 & 1 & 1 & \ldots & 0 & -9713.0 & 41 \\
+... 
+15 & 1 & 1 & 1 & 1 & \ldots & 0 & -8735.0 & 1 \\
+\end{array}
+\]
+
+
+## QPU Analytics
+- **QPU Sampling Time:** 12.560 ms
+- **Post-Processing Overhead Time:** 2.014 ms
+- **QPU Anneal Time per Sample:** 20 µs
+- **Total Post-Processing Time:** 2.014 ms
+- **QPU Readout Time per Sample:** 85 µs
+- **QPU Access Time:** 28.316 ms
+- **QPU Access Overhead Time:** 7.735 ms
+- **QPU Programming Time:** 15.756 ms
+- **QPU Delay Time per Sample:** 21 µs
+
+---
 
 ## Contact Information
 
