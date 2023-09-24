@@ -1287,9 +1287,9 @@ sampler = EmbeddingComposite(DWaveSampler())
 
 Feel free to connect with me:
 
-- 📧 Email: [your_email@gmail.com](mailto:your_email@gmail.com)
-- 💼 LinkedIn: [your_linkedin_profile](https://linkedin.com/in/your_linkedin_profile)
-- 🌐 Portfolio: [your_portfolio_site](https://your_portfolio_site.com)
+- 📧 Email: davidmerwin1992@gmail.com
+- 💼 LinkedIn:
+- 🌐 Portfolio:
 
 
 
