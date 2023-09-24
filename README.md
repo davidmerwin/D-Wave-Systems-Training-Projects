@@ -979,7 +979,14 @@ for sample, energy, num_oc in response.data(['sample', 'energy', 'num_occurrence
 The optimization problem remains in the QUBO framework, which is ideal for solving problems like the Traveling Salesman Problem, Maximum Cut, etc.
 
 ### Solution Methodology
-The problem was solved using the Quantum Annealing algorithm, optimized using the QUBO method.
+The problem was solved using the Quantum Annealing algorithm, optimized using the QUBO method. Larger graphs are formulated as QUBOs for hybrid classical quantum qbsolv - 0/1 valued variables
+Minimizing the objective function:
+
+![](https://cdn.mathpix.com/snip/images/ozCxV5w06PKTszZYJ3dUlnFBDQOo_0DVKnDzP5kYVGQ.original.fullsize.png)
+
+$$
+O(Q, x)=\Sigma Q_{i i} x_i+\Sigma q_{i j} x_i x_j
+$$
 
 ## Solver Metrics
 
@@ -1023,6 +1030,8 @@ E(x) = \sum_{i=1}^{4} \sum_{j=1}^{4} Q_{ij} x_i x_j
 \]
 
 Here, \(Q_{ij}\) represents the coefficients in the QUBO problem, and \(x_i\) are the binary variables. Minimizing \(E(x)\) provides us with the optimal solution.
+
+![](https://cdn.mathpix.com/snip/images/ozCxV5w06PKTszZYJ3dUlnFBDQOo_0DVKnDzP5kYVGQ.original.fullsize.png)
 
 
 ## Python3 Code
