@@ -1,3 +1,19 @@
+Super-node Concept
+![](https://cdn.mathpix.com/snip/images/6Y5Bt1VxV6kSHNZDsFrsFz4XN6aYM1Y8EK079NfZbaQ.original.fullsize.png)
+The k-Concurrent Graph Partitioning algorithm is a method for partitioning a graph into k parts in parallel. The algorithm uses a super-node concept, where each vertex in the graph is represented by a logical qubit. The algorithm then uses a new formulation that requires a kn x kn QUBO, where n is the number of vertices in the graph. The result of the algorithm is that 1 of k qubits is set on for each vertex. This is similar to the graph coloring problem, and is useful for graph partitioning and community detection.k-Concurrent Graph Partitioning - Multiple parts in parallel
+- Partition into $k$ parts in parallel
+- Uses super-node concept
+- Unary embedding
+- k logical qubits per vertex
+- New formulation requires a kn x kn QUBO
+- Results in 1 of k qubits set on for each vertex
+- Similar to graph coloring problem
+- Useful for graph partitioning and community detection
+
+
+
+
+
 | Constraint | Penalty Function |
 | :---: | :---: |
 | $x+y \leq 1$ | $x \cdot y$ |
