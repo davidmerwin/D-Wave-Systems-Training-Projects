@@ -431,8 +431,6 @@ The results were exported in a JSON format, showcasing various energy levels and
 - **QPU Programming Time:** 15.756 ms
 - **QPU Delay Time per Sample:** 21 µs
 
----
-Creating a professional GitHub portfolio involves not only showcasing your code and projects but also making it easy for others to understand the significance and methodology of your work. Given your interest in D-Wave Systems and quantum computing, you can use Markdown to create an organized and visually appealing portfolio. Below is an example Markdown text to add to your `README.md` or project-specific `README.md` file on GitHub.
 
 ---
 
