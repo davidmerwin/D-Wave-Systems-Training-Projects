@@ -97,6 +97,137 @@ A mathematical expression of the energy of a system as a function of binary vari
 ![](https://cdn.mathpix.com/snip/images/4vyz7pRyOcaW6wnGK-Y3P2Iyx7ZYqryQNhFvADCw3PU.original.fullsize.png)
 
 -------------------------
-Math
+Math:
+
+![](https://cdn.mathpix.com/snip/images/sIBddPJjog9Jfwyb7PpjI2764z_ZaLE8xvd50CP0qpU.original.fullsize.png)
+
+# D-Wave Systems Quantum Computing Training Project
+
+## Clustering for Identifying Communities in Bio-Systems: A Mathematical and Pythonic Perspective
+
+### Overview
+
+In this project, we explore the concept of community detection within bio-systems, with a specific focus on the enzyme IGPS found in bacteria. We use both classical algorithms such as Girvan-Newman and quantum algorithms using D-Wave's qbsolv to approach this optimization problem.
+
+### Mathematical Concepts
+
+#### 1. Mutual Information
+
+Mutual Information \( \mathbf{r}_{ij}^{MI} \) between two residues \( \mathbf{x}_i \) and \( \mathbf{x}_j \) in the enzyme is calculated using a function \( g \) as follows:
+
+\[
+\mathbf{r}_{ij}^{MI} = g\left(\mathbf{I}[\mathbf{x}_i, \mathbf{x}_j]\right)
+\]
+
+#### 2. Modularity Matrix
+
+![](https://cdn.mathpix.com/snip/images/CVqA2vsoiiEkUKIkXqx6RrFcl--zyo0_tKWTMCGq1JE.original.fullsize.png)
+
+The modularity matrix \( Q \) is an essential tool for detecting communities within the network. It is defined as:
+
+\[
+Q = B - \gamma A
+\]
+
+Where:
+- \( B \) is the adjacency matrix
+- \( A \) is the degree matrix
+- \( \gamma \) is a resolution parameter
+
+
+### Python3 Code Implementation
+
+To get started, install the required Python packages:
+
+```bash
+pip install numpy dwave-ocean-sdk
+```
+
+Here's the Python3 code that demonstrates the community detection approach:
+
+```python
+import numpy as np
+from dwave.system import DWaveSampler, EmbeddingComposite
+from dwave_qbsolv import QBSolv
+
+# Generate a correlation matrix (This is a mock-up for demonstration)
+n = 454  # Number of residues in IGPS
+C = np.random.rand(n, n)
+
+# Calculate modularity matrix
+gamma = 1.0
+A = np.sum(C, axis=0)
+Q = C - gamma * np.outer(A, A) / np.sum(A)
+
+# Prepare for qbsolv
+Q_dict = {(i, j): Q[i, j] for i in range(n) for j in range(n)}
+
+# Initialize D-Wave parameters
+sampler = EmbeddingComposite(DWaveSampler())
+response = QBSolv().sample_qubo(Q_dict, solver=sampler, num_repeats=10)
+
+# Extract communities
+best_sample = response.first.sample
+communities = {node: state for node, state in best_sample.items()}
+```
+
+----------------------------------
+
+
+### Exploring Signed Social Networks with D-Wave: Challenges and Insights
+
+#### Overview
+
+The study aims to explore the computational efficacy of D-Wave in calculating structural balance in signed social networks. We conducted experiments on fully-connected graphs and compared the performance of D-Wave against a simulator. 
+
+
+#### Challenges
+
+1. **Topology Mismatch**: Arbitrary networks often do not align with D-Wave's native topology, complicating the mapping process. Even simple structures like triangles pose challenges.
+2. **Embedding Complexity**: Creating the desired topology by chaining nodes together, a process called "embedding," is NP-hard.
+3. **Hardware Limitations**: Given the current D-Wave machine topology and available qubits, the upper limit for fully-connected, simulated nodes is approximately 49.
+4. **Overhead Costs**: A significant portion of the execution time on D-Wave is spent on communication and initialization, overshadowing the D-Wave's fast annealing time of 20 microseconds.
+
+![](https://cdn.mathpix.com/snip/images/YAWXKj3Y-bNy0dOxLWGIC3VgnDk3hZsP1V5CKyO3Wus.original.fullsize.png)
+
+
+#### Mathematical Formulation
+
+![](https://cdn.mathpix.com/snip/images/44m0EYljHHIqvbqDSYAJZhLee4QbAAa0xpk3Lut6XBo.original.fullsize.png)
+
+The Ising model equivalent to this problem is governed by the Hamiltonian:
+
+\[
+H = \sum_{i, j} \left( 1 - J_{ij} s_i s_j \right)
+\]
+
+Where \( J_{ij} \) and \( s_i \) are as described earlier. 
+
+
+#### Python Code Snippet
+
+Given the challenges, it's crucial to optimize the D-Wave code as much as possible. Here's a code snippet that minimizes overhead:
+
+```python
+from dwave.system import DWaveSampler, EmbeddingComposite
+
+# Predefined J matrix (mock example)
+J = {(0, 1): 1, (1, 2): -1, (0, 2): -1}
+
+# Initialize D-Wave sampler
+sampler = DWaveSampler()
+embedded_sampler = EmbeddingComposite(sampler)
+
+# Sample with minimal overhead
+params = {'num_reads': 1000, 'annealing_time': 20}  # Annealing time in microseconds
+response = embedded_sampler.sample_ising({}, J, **params)
+
+# Extract optimal assignment
+best_sample = response.first.sample
+optimal_assignment = {node: 'Positive' if state == 1 else 'Negative' for node, state in best_sample.items()}
+
+print("Optimal Assignment:", optimal_assignment)
+
+
 
 
