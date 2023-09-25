@@ -36,5 +36,4 @@ The physical aspects of research on quantum computing are guided by DiVincenzoâ€
 ![](https://cdn.mathpix.com/snip/images/KZ7cu3oV7l43yB_kBFhiaxZJ763xP5FfkCV-far69vk.original.fullsize.png)
 *Zagoskin, A. M. (2010). Why quantum engineering?. Low Temperature Physics, 36(10), 911-914. https://doi.org/10.1063/1.3515522
 
-![](https://cdn.mathpix.com/snip/images/wnce6wuOcijRXMcfCZZJqlJRqYk5xVUqqihVuhvzxtw.original.fullsize.png)
-![](https://cdn.mathpix.com/snip/images/pE4R2Rd8fRDsjcVWWQeFXqkHhtVGglIlIKRUWH3hepM.original.fullsize.png)
+![](https://cdn.mathpix.com/snip/images/wnce6wuOcijRXMcfCZZJqlJRqYk5xVUqqihVuhvzxtw.original.fullsize.png) ![](https://cdn.mathpix.com/snip/images/pE4R2Rd8fRDsjcVWWQeFXqkHhtVGglIlIKRUWH3hepM.original.fullsize.png) 
