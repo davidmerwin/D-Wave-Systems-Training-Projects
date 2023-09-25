@@ -263,9 +263,7 @@ best_sample = response.first.sample
 optimal_assignment = {node: 'Positive' if state == 1 else 'Negative' for node, state in best_sample.items()}
 
 print("Optimal Assignment:", optimal_assignment)
-
-
-
+```
 
 
 
