@@ -18,4 +18,15 @@ The physical aspects of research on quantum computing are guided by DiVincenzo‚Ä
 5. A qubit-speciÔ¨Åc measurement capability.
    *Zagoskin, A. M. (2010). Why quantum engineering?. Low Temperature Physics, 36(10), 911-914. https://doi.org/10.1063/1.3515522
 
+![](https://cdn.mathpix.com/snip/images/BIc98BGgF_MO6ScGByXofm7tPcTQIKcByUFID5WsulA.original.fullsize.png)
+*Zagoskin, A. M. (2010). Why quantum engineering?. Low Temperature Physics, 36(10), 911-914. https://doi.org/10.1063/1.3515522
+
+![](https://cdn.mathpix.com/snip/images/NG0vHCHlgNPJ9bwlqJ8oOtLyCfzs7vZ9UOzXZG33ZnU.original.fullsize.png)
+*Zagoskin, A. M. (2010). Why quantum engineering?. Low Temperature Physics, 36(10), 911-914. https://doi.org/10.1063/1.3515522
+
+
+![](https://cdn.mathpix.com/snip/images/Yv8Orq5ynRZgnsWN6pNAEAFdOtPD-T_mcf8MzgLkSm8.original.fullsize.png)
+*Zagoskin, A. M. (2010). Why quantum engineering?. Low Temperature Physics, 36(10), 911-914. https://doi.org/10.1063/1.3515522
+
+
 
