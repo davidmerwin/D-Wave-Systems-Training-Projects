@@ -11,7 +11,7 @@ The k-Concurrent Graph Partitioning algorithm is a method for partitioning a gra
 - Useful for graph partitioning and community detection
 
 
-
+-----------
 
 
 | Constraint | Penalty Function |
@@ -22,6 +22,9 @@ The k-Concurrent Graph Partitioning algorithm is a method for partitioning a gra
 | $x \leq y$ | $x-x \cdot y$ |
 | $x+y+z \leq 1$ | $x \cdot y+x \cdot z+y \cdot z$ |
 | $x=y$ | $x+y-2 \cdot x \cdot y$ |
+
+--------------
+
 
 | Concepts | Related terms |
 | :--- | :--- |
@@ -37,6 +40,39 @@ The k-Concurrent Graph Partitioning algorithm is a method for partitioning a gra
 | Samplers and Composites | solver |
 | Solutions | samples, sampleset, probabilistic, energy |
 | Variables | binary, discrete, integer, real variables |
+
+
+----------------
+
+DiVincenzo's
+
+electromagnetic wave propagating through a chain of identical qubits placed in a transmission line, and considered as an effective medium. 
+
+circuit formalism, ${ }^{42}$ 
+
+node 
+
+"flux" $\Phi_n$,
+
+time derivative 
+
+node potential (in CGS units) 
+
+CGS units
+
+Lumped element circuit  
+
+ID quantum metamaterial: 
+
+chain of flux qubits 
+
+transmission line 
+
+
+
+
+
+
 
 ![](https://cdn.mathpix.com/snip/images/6rhvLXInhSUSMWKbSvY84FCHr65yN5Nx5krDVUEATaU.original.fullsize.png)
 
@@ -100,8 +136,8 @@ A mathematical expression of the energy of a system as a function of binary vari
 Math:
 
 ![](https://cdn.mathpix.com/snip/images/sIBddPJjog9Jfwyb7PpjI2764z_ZaLE8xvd50CP0qpU.original.fullsize.png)
-
-# D-Wave Systems Quantum Computing Training Project
+ 
+------------
 
 ## Clustering for Identifying Communities in Bio-Systems: A Mathematical and Pythonic Perspective
 
