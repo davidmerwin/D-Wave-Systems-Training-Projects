@@ -38,7 +38,80 @@ Table of Contents
         ├── data
         └── ...
                                                 
-                   
+
+
+# Lagrangian Mechanics
+
+## Equation of Motion
+- $\dot{\Phi}_n(t)=c V_n(t)$
+
+## Classical Lagrangian
+- The classical Lagrangian for the problem is given by:
+  $$
+  \begin{aligned}
+  \mathcal{L}(\Psi, \Phi ; \dot{\Psi}, \dot{\Phi})= & \sum_n\left(C \frac{\left(\dot{\Phi}_n\right)^2}{2 c^2}-\frac{\left(\Phi_n-\Phi_{n-1}-\tilde{\Psi}_n\right)^2}{2 L}\right. \\
+  & \left.+\mathcal{L}_{n, q b}(\Psi, \dot{\Psi})\right),
+  \end{aligned}
+  $$
+  where:
+  - $\mathcal{L}_{n, q b}$: Describes the $n$th flux qubit
+  - $\tilde{\Psi}_n$: Magnetic flux induced by the $n$th flux qubit
+
+## Routh Function
+- The Routh function with respect to the qubit variables $(\Psi, \dot{\Psi})$ is introduced by a partial Lagrange transformation:
+  $$
+  \mathcal{R}\left(\Pi_{\Psi}, \Psi ; \Phi, \dot{\Phi}\right)=\sum_a \Pi_{\Psi_a} \dot{\Psi}_a-\mathcal{L}(\Psi, \Phi ; \dot{\Psi}, \dot{\Phi})
+  $$
+
+  ### Variables
+  - $\Pi_{\Psi}$: Momenta conjugate to qubit variables
+
+## Equations of Motion
+- The Routh function ("Routhian") satisfies the Lagrange equations for the $(\Phi, \Phi)$-variables, and the Hamilton equations for the $(\Psi, \Pi_{\Psi})$-variables:
+  $$
+  \frac{d}{d t} \frac{\partial \mathcal{R}}{\partial \dot{\Phi}_n}-\frac{\partial \mathcal{R}}{\partial \Phi_n}=0
+  $$
+  $$
+  \frac{d}{d t} \Pi_{\Psi_n}=-\frac{\partial \mathcal{R}}{\partial \Psi_n}
+  $$
+  $$
+  \frac{d}{d t} \Psi_n=\frac{\partial \mathcal{R}}{\partial \Pi_{\Psi_n}}
+  $$
+
+  #### Lagrange Equations
+  - The Lagrange equations for the $(\Phi, \Phi)$-variables are given by:
+    $$
+    \frac{d}{d t} \frac{\partial \mathcal{R}}{\partial \dot{\Phi}_n}-\frac{\partial \mathcal{R}}{\partial \Phi_n}=0
+    $$
+
+  #### Hamilton Equations
+  - The Hamilton equations for the $(\Psi, \Pi_{\Psi})$-variables are given by:
+    $$
+    \frac{d}{d t} \Pi_{\Psi_n}=-\frac{\partial \mathcal{R}}{\partial \Psi_n}
+    $$
+    $$
+    \frac{d}{d t} \Psi_n=\frac{\partial \mathcal{R}}{\partial \Pi_{\Psi_n}}
+    $$
+
+## Quasiclassical Treatment
+- The Routh function provides a convenient way of quantizing the qubit degrees of freedom while keeping the variables describing the transmission line classical.
+- This corresponds to the quasiclassical treatment of the scattering of light by atoms.
+- The resulting equations of motion for the field in the line in the continuum limit are:
+  $$
+  \ddot{\Phi}(x, t)-s^2 \partial_{x x}^2 \Phi(x, t)=s \Omega \Psi_0 \partial_x \Lambda(x, t)
+  $$
+  where:
+  - $\Omega$: Resonance frequency
+  - $s$: Phase velocity in the line
+  - $\Psi_0$: Amplitude of the induced flux
+  - $\Lambda(x, t)$: Determined by the wave function of the qubit at a given point
+
+## Quantum Metamaterial
+- Analysis of the wave equation shows that the qubit line behaves as a special kind of medium, a quantum metamaterial.
+- The quantum metamaterial is sensitive to the quantum state of the qubits and can produce phenomena such as "breathing" photonic gaps due to quantum beats.
+
+## Resources
+- [Lagrangian Mechanics - Wikipedia](https://en.wikipedia.org/wiki/Lagrangian_mechanics)
                                               
 
     # Quantum Computing 101 with D-Wave Systems
