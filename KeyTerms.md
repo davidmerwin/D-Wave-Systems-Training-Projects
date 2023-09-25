@@ -267,3 +267,20 @@ print("Optimal Assignment:", optimal_assignment)
 
 
 
+
+
+
+
+
+
+
+Citations /References:
+
+Zagoskin, A. M. (2010). Why quantum engineering?. Low Temperature Physics, 36(10), 911-914. https://doi.org/10.1063/1.3515522
+
+D-Wave Systems
+
+Los Alomos National Lab
+
+
+
