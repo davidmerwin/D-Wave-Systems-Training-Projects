@@ -95,24 +95,23 @@ Table of Contents
 
 ## Quasiclassical Treatment
 - The Routh function provides a convenient way of quantizing the qubit degrees of freedom while keeping the variables describing the transmission line classical.
-- This corresponds to the quasiclassical treatment of the scattering of light by atoms.
-- The resulting equations of motion for the field in the line in the continuum limit are:
+- This corresponds to the quasiclassical treatment of the scattering of光线通过原子的现象。
+- 在连续极限中，线路中场的运动方程为：
   $$
   \ddot{\Phi}(x, t)-s^2 \partial_{x x}^2 \Phi(x, t)=s \Omega \Psi_0 \partial_x \Lambda(x, t)
   $$
-  where:
-  - $\Omega$: Resonance frequency
-  - $s$: Phase velocity in the line
-  - $\Psi_0$: Amplitude of the induced flux
-  - $\Lambda(x, t)$: Determined by the wave function of the qubit at a given point
+  其中：
+  - $\Omega$：共振频率
+  - $s$：线路中的相速度
+  - $\Psi_0$：感应磁通的幅度
+  - $\Lambda(x, t)$：由给定点的量子比特波函数决定
 
 ## Quantum Metamaterial
-- Analysis of the wave equation shows that the qubit line behaves as a special kind of medium, a quantum metamaterial.
-- The quantum metamaterial is sensitive to the quantum state of the qubits and can produce phenomena such as "breathing" photonic gaps due to quantum beats.
+- 对波动方程的分析表明，量子比特线表现为一种特殊类型的介质，即量子超材料。
+- 量子超材料对量子比特的量子态敏感，并且可以产生由于量子拍频引起的“呼吸”光子间隙等现象。
 
-## Resources
+## 资源
 - [Lagrangian Mechanics - Wikipedia](https://en.wikipedia.org/wiki/Lagrangian_mechanics)
-                                              
 
     # Quantum Computing 101 with D-Wave Systems
 
