@@ -390,11 +390,11 @@ For more information on the Advantage_system 4.1 solver, you can refer to the [D
 
 
 ## Table of Contents
-- [Project Details](#project-details)
-- [Problem Parameters and Solution Timing](#problem-parameters-and-solution-timing)
-- [QPU Analytics](#qpu-analytics)
-- [Installation and Usage](#installation-and-usage)
-- [License](#license)
+- [Project Details]
+- [Problem Parameters and Solution Timing]
+- [QPU Analytics]
+- [Installation and Usage]
+- [License]
 
 ## Project Details
 - **ID:** 4838543d-7640-4f98-ba84-45d171c10911
@@ -501,15 +501,6 @@ bqm.add_interactions_from(qubo_interactions)
 
 ------------
 
-
-## Table of Contents
-
-- [About Me](#about-me)
-- [D-Wave Systems Quantum Computing Training](#d-wave-systems-quantum-computing-training)
-  - [Project Overview](#project-overview)
-  - [Technical Metrics](#technical-metrics)
-  - [Code Snippets](#code-snippets)
-- [Contact](#contact)
 
 
 ### Project Overview
@@ -698,15 +689,6 @@ Here, \( q_{i} \) and \( q_{ij} \) are coefficients of the QUBO matrix, and \( x
 ```markdown
 # D-Wave Systems Quantum Computing: Session 2
 
-## Table of Contents
-1. [Overview](#overview)
-2. [Project Details](#project-details)
-3. [Solver Metrics](#solver-metrics)
-4. [Results and Analysis](#results-and-analysis)
-5. [Mathematical Context](#mathematical-context)
-6. [Python3 Code](#python3-code)
-
-
 
 ## Project Details
 
@@ -784,17 +766,6 @@ for sample, energy, num_oc in response.data(['sample', 'energy', 'num_occurrence
 
 --------
 
-# D-Wave Systems Quantum Computing Training Project
-
-## Table of Contents
-1. [Overview](#overview)
-2. [Project Details](#project-details)
-3. [Solver Metrics](#solver-metrics)
-4. [Results and Analysis](#results-and-analysis)
-5. [Mathematical Context](#mathematical-context)
-6. [Python3 Code](#python3-code)
-
-
 
 ## Project Details
 
@@ -871,17 +842,6 @@ for sample, energy, num_oc in response.data(['sample', 'energy', 'num_occurrence
 ```
 
 ---
-
-# D-Wave Systems Quantum Computing Training Project
-
-## Table of Contents
-1. [Overview](#overview)
-2. [Project Details](#project-details)
-3. [Solver Metrics](#solver-metrics)
-4. [Results and Analysis](#results-and-analysis)
-5. [Mathematical Context](#mathematical-context)
-6. [Python3 Code](#python3-code)
-
 
 
 
@@ -1033,7 +993,7 @@ Here, \(Q_{ij}\) represents the coefficients in the QUBO problem, and \(x_i\) ar
 
 ## Python3 Code
 
-Here's a Python3 example using D-Wave's SDK:
+Python3 example using D-Wave's SDK:
 
 ```python
 from dwave.system import DWaveSampler, EmbeddingComposite
@@ -1055,20 +1015,6 @@ for sample, energy, num_oc in response.data(['sample', 'energy', 'num_occurrence
 
 
 ```markdown
-
-
-![Quantum Computing](quantum-computing-image.jpg) <!--  image -->
-
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Project Summary](#project-summary)
-3. [Technologies](#technologies)
-4. [Solver Metrics](#solver-metrics)
-5. [Results](#results)
-6. [Mathematical Context](#mathematical-context)
-7. [Source Code](#source-code)
-8. [Contact](#contact)
 
 
 ## Project Summary
@@ -1259,8 +1205,8 @@ sampler = EmbeddingComposite(DWaveSampler())
 
 #### Outputs
 
-- **Original Graph**: ![Original Graph](images/original_graph.png)
-- **Solution Graph**: ![Solution Graph](images/solution_graph.png)
+
+
 
 #### References
 
@@ -1286,7 +1232,7 @@ Feel free to connect with me:
 
 - 📧 Email: davidmerwin1992@gmail.com
 - 💼 LinkedIn:
-- 🌐 Portfolio:
+- 🌐 Portfolio: [D-Wave Profile](https://support.dwavesys.com/hc/en-us/profiles/384378940113-David-M)
 
 
 
