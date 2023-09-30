@@ -389,12 +389,6 @@ For more information on the Advantage_system 4.1 solver, you can refer to the [D
 --------------------
 
 
-## Table of Contents
-- [Project Details]
-- [Problem Parameters and Solution Timing]
-- [QPU Analytics]
-- [Installation and Usage]
-- [License]
 
 ## Project Details
 - **ID:** 4838543d-7640-4f98-ba84-45d171c10911
@@ -816,12 +810,9 @@ energy  | num_oc. | 2473 | 2488 | 2503 | ... | 5428
 
 The energy function \(E\) in QUBO is usually represented as:
 
-\[
-E(x) = \sum_{i,j} Q_{ij} x_i x_j
-\]
+![](https://cdn.mathpix.com/snip/images/4evS5-3IUIijq1_oV09tpGI5eGNCMYYhmHuFkDHIIts.original.fullsize.png)
 
-where \(Q_{ij}\) are the elements of a QUBO matrix and \(x_i, x_j\) are the binary variables. The objective is to find \(x\) that minimizes \(E(x)\).
-
+![](https://cdn.mathpix.com/snip/images/8PeqKHCJYfSQ_vTv6yGZiBqLi4OdPlQlUycEt0IMFrw.original.fullsize.png)
 
 
 ## Python3 Code
@@ -977,18 +968,6 @@ The output results show different configurations with respective energies and oc
   0  |  1   |  1   |  1   |  -1.0   |   47
 ```
 
-
-## Mathematical Context
-
-The energy function \(E\) can be expressed as:
-
-\[
-E(x) = \sum_{i=1}^{4} \sum_{j=1}^{4} Q_{ij} x_i x_j
-\]
-
-Here, \(Q_{ij}\) represents the coefficients in the QUBO problem, and \(x_i\) are the binary variables. Minimizing \(E(x)\) provides us with the optimal solution.
-
-![](https://cdn.mathpix.com/snip/images/ozCxV5w06PKTszZYJ3dUlnFBDQOo_0DVKnDzP5kYVGQ.original.fullsize.png)
 
 
 ## Python3 Code
@@ -1147,17 +1126,6 @@ response = sampler.sample_qubo(Q, num_reads=100)
 
 ---
 
-# Quantum Computing Portfolio
-
-## Table of Contents
-1. [About Me](#about-me)
-2. [Projects](#projects)
-    - [Graph Mapping with D-Wave Systems](#graph-mapping)
-3. [Technologies Used](#technologies-used)
-4. [Contact](#contact)
-5. [License](#license)
-
----
 
 
 ## Projects
