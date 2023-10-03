@@ -1,4 +1,8 @@
 # D-Wave-Systems-Training-Projects
+Python Prep:
+https://gist.github.com/e4758b0bd36796313bfc3f9bab50da46
+
+![](https://cdn.mathpix.com/snip/images/e_bLeOWvSjGIO5CGBpNa-uOaRW5OnFBllhHDLlI69I4.original.fullsize.png)
 
 Table of Contents
 1. Overview
