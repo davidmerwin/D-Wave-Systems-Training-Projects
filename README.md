@@ -1,4 +1,3 @@
-<script src="https://gist.github.com/davidmerwin/ec9b043b5ed5b1bc02a11198b4efb4a8.js"></script>
 # D-Wave-Systems-Training-Projects
 Python Prep:
 https://gist.github.com/e4758b0bd36796313bfc3f9bab50da46
