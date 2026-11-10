@@ -1,0 +1,10 @@
+# Only ecosystems with manifests in this repository, plus GitHub Actions.
+# No package manifests were found (no package.json, requirements.txt,
+# pyproject.toml, Pipfile, go.mod, Cargo.toml, Gemfile, or similar).
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
