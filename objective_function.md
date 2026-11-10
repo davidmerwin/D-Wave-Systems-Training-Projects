@@ -32,9 +32,11 @@ bqm = BinaryQuadraticModel('BINARY')
 for i in G.nodes:
     bqm.add_variable(i, 1)  # Coefficient is 1 for x_i
 
-# Add the quadratic terms to the BQM (corresponding to the second term in your equation)
+# Add the edge-penalty terms (gamma * (1 - x_i - x_j + x_i * x_j) for each edge)
 for i, j in G.edges:
-    bqm.add_interaction(i, j, -2 * gamma)  # Coefficient for x_i * x_j is -2*gamma
+    bqm.add_variable(i, -gamma)  # Linear term -gamma * x_i
+    bqm.add_variable(j, -gamma)  # Linear term -gamma * x_j
+    bqm.add_interaction(i, j, gamma)  # Coefficient for x_i * x_j is gamma
     bqm.add_offset(gamma)  # Constant term gamma
 
 # Use the LeapHybridSampler to find the solution

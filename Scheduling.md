@@ -27,11 +27,12 @@ for name, prefs in employees.items():
     dqm.add_variable(num_shifts, label=name)
     dqm.set_linear(name, prefs)
 
-# Quadratic terms to enforce one shift per employee
+# Quadratic terms to penalize two employees assigned the same shift
+penalty = 5  # larger than any preference value (1-4)
 for name1 in employees:
     for name2 in employees:
         if name1 != name2:
-            biases = {(i, j): 1 for i in range(num_shifts) for j in range(num_shifts)}
+            biases = {(shift, shift): penalty for shift in range(num_shifts)}
             dqm.set_quadratic(name1, name2, biases)
 
 # Sample
