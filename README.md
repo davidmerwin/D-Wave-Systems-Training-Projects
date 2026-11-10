@@ -1209,7 +1209,6 @@ Feel free to connect with me:
 
 
 Thank you for visiting my portfolio! 😊
-```
 
 
   
@@ -1219,23 +1218,335 @@ Feel free to reach out if you have any questions or would like to collaborate!
 
 ## Key sources in context
 
-The published work and documentation behind the training projects above, each tied to the part of this repository it supports.
+The published work and documentation behind the training projects above, written as a compact annotated bibliography. Each source is tied to files in this repository. None is used to claim a quantum advantage. <sup>[E1](#en1)</sup>
 
-- **B1.** Kadowaki, Tadashi; Nishimori, Hidetoshi. "Quantum annealing in the transverse Ising model." *Physical Review E* 58(5): 5355–5363, 1998. DOI: [10.1103/PhysRevE.58.5355](https://doi.org/10.1103/PhysRevE.58.5355)  
-  *In context:* the origin of the annealing method behind every `QPU_ANNEAL_TIME_PER_SAMPLE` figure in the Project ID sections.
-- **B11.** Lucas, Andrew. "Ising formulations of many NP problems." *Frontiers in Physics* 2: 5, 2014. DOI: [10.3389/fphy.2014.00005](https://doi.org/10.3389/fphy.2014.00005)  
-  *In context:* gives the standard Ising/QUBO encodings for number partitioning and maximum independent set, the problems in the Number Partitioning projects and `Maxindependentsetgraph.md`.
-- **B12.** Glover, Fred; Kochenberger, Gary; Du, Yu. "Quantum Bridge Analytics I: a tutorial on formulating and using QUBO models." *4OR* 17(4): 335–371, 2019. DOI: [10.1007/s10288-019-00424-y](https://doi.org/10.1007/s10288-019-00424-y)  
-  *In context:* a practical guide to the penalty terms used in `objective_function.md`, `Problemtwo.md`, `Problem3.md` and the employee scheduling models in `Scheduling.md`.
-- **B13.** Choi, Vicky. "Minor-embedding in adiabatic quantum computation: I. The parameter setting problem." *Quantum Information Processing* 7(5): 193–209, 2008. DOI: [10.1007/s11128-008-0082-9](https://doi.org/10.1007/s11128-008-0082-9)  
-  *In context:* the theory behind the embedding training project (Project ID 6dbabf04…) and the minor-embedding done with D-Wave Inspector, including how chain strength is set.
-- **B10.** Boothby, Kelly; Bunyk, Paul; Raymond, Jack; Roy, Aidan. "Next-Generation Topology of D-Wave Quantum Processors." arXiv:2003.00133, 2020. [arxiv.org/abs/2003.00133](https://arxiv.org/abs/2003.00133)  
-  *In context:* describes the Pegasus topology of the Advantage_system 4.1 solver used for the QPU runs recorded here.
-- **B9.** King, Andrew D.; Raymond, Jack; Lanting, Trevor; et al. "Quantum critical dynamics in a 5,000-qubit programmable spin glass." *Nature* 617(7959): 61–66, 2023. DOI: [10.1038/s41586-023-05867-2](https://doi.org/10.1038/s41586-023-05867-2)  
-  *In context:* peer-reviewed physics results on Advantage-class hardware, background for `Quantum_Engineering.md`. It concerns device dynamics, not the speed of the problems solved here.
-- **B16.** D-Wave Quantum Inc. *D-Wave Documentation* (Ocean SDK, Leap and solvers). [docs.dwavequantum.com/en/latest](https://docs.dwavequantum.com/en/latest/)  
-  *In context:* the reference for the Getting Started steps (`pip install dwave-ocean-sdk`, Leap) and the DQM models in `DQM.md`, `workforcedqm.md` and `Linearweightsemployees.md`.
-- **B17.** D-Wave Systems. *dimod: a shared API for QUBO/Ising samplers.* [github.com/dwavesystems/dimod](https://github.com/dwavesystems/dimod)  
-  *In context:* the library behind the BQM code snippets, the `ExactSolver` notes and `sampleset.md`. `ExactSolver` is a classical reference solver, not a QPU run.
+**How to read each entry.** The *caption*, *metadata*, *descriptors*, *tags* and *labels* form the catalog card. The *abstract*, *gloss*, *commentary* (with its *elucidation* and *exposition*), *exegesis* and *critique* are the reading. *Marginalia* point to files in this repository, *scholia* compare the sources with each other, and each entry has one *footnote*. The anchors (`#b11`, `#b11-fn`) are the *markup*. Code comments, docstrings, directives and decorators in this repository are listed after the entries.
 
-The B-numbers (B1, B9–B13, B16, B17) refer to the full annotated bibliography in the private [merwin-flagship-projects](https://github.com/davidmerwin/merwin-flagship-projects/blob/main/bibliography/ANNOTATED_BIBLIOGRAPHY.md) repository, which requires access. Each source is cited for background and method; none is used to claim a quantum advantage.
+**Sources:** [B1](#b1) · [B36](#b36) · [B11](#b11) · [B12](#b12) · [B44](#b44) · [B53](#b53) · [B13](#b13) · [B14](#b14) · [B10](#b10) · [B9](#b9) · [B43](#b43) · [B37](#b37) · [B16](#b16) · [B17](#b17) <sup>[E2](#en2)</sup>
+
+<a id="b1"></a>
+
+### B1 · Quantum annealing in the transverse Ising model
+
+> **Caption.** The paper that named quantum annealing: tunnelling, not heat, as the search engine.
+
+**Metadata.** Tadashi Kadowaki, Hidetoshi Nishimori (1998). *Physical Review E 58(5): 5355–5363*. Journal article. DOI: [10.1103/PhysRevE.58.5355](https://doi.org/10.1103/PhysRevE.58.5355). Verified 10 Nov 2026.<br>
+**Descriptors.** Quantum annealing · Ising model · **Tags.** `transverse-field` `origin` `simulated-annealing-comparison` · **Labels.** `evidence:peer-reviewed` `role:foundation` `type:journal-article` `status:verified`
+
+- **Abstract.** Introduces quantum annealing: add a transverse field to an Ising problem, then slowly weaken it so quantum fluctuations, rather than thermal ones, carry the system toward low-energy states. Small numerical experiments compare it with simulated annealing.
+- **Gloss.** *Transverse field*: A term that lets spins flip by quantum tunnelling; it is the 'driver' that is slowly turned off. *Ising model*: Energy function over ±1 spins with local fields h and couplings J.
+- **Commentary.** The root of every QPU run recorded above. *Elucidation:* It explains what `QPU_ANNEAL_TIME_PER_SAMPLE` (20 µs in the Project ID sections) is timing: one sweep of the transverse field from strong to zero. *Exposition:* Replace temperature with a transverse field Γ(t). At large Γ the ground state is an easy superposition; as Γ→0 the Hamiltonian becomes the problem Ising model, and a slow enough sweep leaves the system near its ground state.
+- **Exegesis.** The paper reports that quantum annealing reached the ground state with higher probability than thermal annealing *in the small systems simulated with the schedules used*. It does not claim a general speedup, and it does not describe hardware.<sup>[1](#b1-fn)</sup>
+- **Critique.** Small, numerically simulated instances in an idealised closed system. Later benchmarking (B37) shows any advantage depends on the instance and the baseline.
+- **Marginalia.**
+  - `README.md`: Project ID cd24acdf… records 100 reads at 20 µs anneal time each, the hardware form of this paper's sweep.
+  - `KeyTerms.md`: The super-node and one-hot ideas are formulation choices, separate from the annealing method itself.
+- **Scholia.** [B36](#b36): The thermal method this paper replaced; read the two together. [B13](#b13): What changes once the ideal Ising model has to fit real hardware.
+- **Footnote.** <a id="b1-fn"></a>¹ Co-author Nishimori stayed central to the field, so later reviews trace back to this paper directly.
+- **In context.** Background for every Advantage_system4.1 training run in this README.
+
+<a id="b36"></a>
+
+### B36 · Optimization by Simulated Annealing
+
+> **Caption.** The classical baseline every annealing claim must face.
+
+**Metadata.** S. Kirkpatrick, C. D. Gelatt, M. P. Vecchi (1983). *Science 220(4598): 671–680*. Journal article. DOI: [10.1126/science.220.4598.671](https://doi.org/10.1126/science.220.4598.671). Verified 10 Nov 2026.<br>
+**Descriptors.** Classical baselines · Quantum annealing · **Tags.** `simulated-annealing` `metropolis` · **Labels.** `evidence:peer-reviewed` `role:foundation` `type:journal-article` `status:verified`
+
+- **Abstract.** Borrows the Metropolis procedure from statistical mechanics to optimise combinatorial problems by slowly lowering a temperature, and applies it to chip partitioning, placement and wiring, and the travelling salesman problem.
+- **Gloss.** *Temperature schedule*: How T decreases; controls the trade-off between exploration and settling. *Metropolis rule*: Accept uphill moves with probability exp(−ΔE/T).
+- **Commentary.** The classical twin of quantum annealing, and the first baseline to compare against. *Elucidation:* Ocean's `SimulatedAnnealingSampler` is this 1983 algorithm running on a CPU, so a local run of these exercises is classical, not a QPU job. *Exposition:* Random local moves, accepted downhill always and uphill sometimes, with the 'sometimes' shrinking over time, let the search escape local minima.
+- **Exegesis.** SA is a *heuristic*; the paper shows good solutions on its examples, not optimality guarantees at practical schedules.<sup>[1](#b36-fn)</sup>
+- **Critique.** Performance is schedule-sensitive; modern parallel tempering and specialised solvers are stronger baselines.
+- **Marginalia.**
+  - `Problemtwo.md`: Small enough to solve with simulated annealing or `ExactSolver` and compare with the QPU sample set.
+  - `README.md`: The Number Partitioning energies (−9826.5 best) can be checked against a local SA run.
+- **Scholia.** [B1](#b1): Heat here, tunnelling there. [B37](#b37): A study where the QPU beat SA on crafted instances, and why that is not a general result.
+- **Footnote.** <a id="b36-fn"></a>¹ The Metropolis acceptance rule (1953) is older; this paper turned it into an optimizer.
+- **In context.** The baseline to log next to any QPU result in this repository.
+
+<a id="b11"></a>
+
+### B11 · Ising formulations of many NP problems
+
+> **Caption.** The cookbook: how constraints become quadratic penalties.
+
+**Metadata.** Andrew Lucas (2014). *Frontiers in Physics 2: 5*. Journal article. DOI: [10.3389/fphy.2014.00005](https://doi.org/10.3389/fphy.2014.00005). Verified 10 Nov 2026.<br>
+**Descriptors.** QUBO formulation · Ising model · **Tags.** `penalty-terms` `number-partitioning` `graph-coloring` `tsp` · **Labels.** `evidence:peer-reviewed` `role:method` `type:journal-article` `status:verified`
+
+- **Abstract.** Catalogues Ising/QUBO encodings for dozens of NP-complete and NP-hard problems, from number partitioning and graph colouring to covering, cliques and travelling salesman, with attention to how many spins each needs.
+- **Gloss.** *Penalty term*: A quadratic energy added so that constraint violations cost energy. *One-hot encoding*: A group of binaries of which exactly one must be 1.
+- **Commentary.** The cookbook for writing a problem as an Ising or QUBO model. *Elucidation:* Number partitioning and maximum independent set, the problems in the Number Partitioning projects and `Maxindependentsetgraph.md`, both follow its encodings. *Exposition:* Write the objective as a quadratic in binaries; add λ·(constraint residual)² for each constraint; choose λ big enough that violations never pay.
+- **Exegesis.** Lucas gives *encodings*, with spin counts. He does not claim annealers solve these problems well, and penalty weights are left to the modeller.<sup>[1](#b11-fn)</sup>
+- **Critique.** Penalty-based encodings can create rugged landscapes and large coefficient ranges that hurt hardware precision (see B12, B13).
+- **Marginalia.**
+  - `README.md`: Number Partitioning (Project ID 23cf353c…) is a direct instance of Lucas's partitioning Hamiltonian.
+  - `Maxindependentsetgraph.md`: Uses `dwave_networkx` with `EmbeddingComposite` for a maximum-independent-set problem. The library builds the QUBO this paper writes out by hand.
+  - `KeyTerms.md`: k-concurrent partitioning with one qubit on per vertex is Lucas-style graph colouring.
+- **Scholia.** [B12](#b12): The operations-research tutorial version of the same recipes. [B13](#b13): The cost of these encodings once they are embedded.
+- **Footnote.** <a id="b11-fn"></a>¹ The preprint is arXiv:1302.5843; the journal version is cited here.
+- **In context.** The encoding reference for the Number Partitioning and graph exercises.
+
+<a id="b12"></a>
+
+### B12 · Quantum Bridge Analytics I: a tutorial on formulating and using QUBO models
+
+> **Caption.** QUBO modelling for operations researchers, with penalty-weight guidance.
+
+**Metadata.** Fred Glover, Gary Kochenberger, Yu Du (2019). *4OR 17(4): 335–371*. Journal article. DOI: [10.1007/s10288-019-00424-y](https://doi.org/10.1007/s10288-019-00424-y). Verified 10 Nov 2026.<br>
+**Descriptors.** QUBO formulation · **Tags.** `tutorial` `operations-research` `penalty-weights` · **Labels.** `evidence:peer-reviewed` `role:method` `type:journal-article` `status:verified`
+
+- **Abstract.** A worked tutorial for building QUBO models of classic combinatorial problems, with standard penalty forms for common constraints and practical advice on choosing penalty scalars.
+- **Gloss.** *QUBO*: Quadratic unconstrained binary optimization: minimise xᵀQx over x∈{0,1}ⁿ. *Penalty scalar P*: Weight that makes infeasible solutions unattractive.
+- **Commentary.** A practical tutorial on QUBO penalties and how to weight them. *Elucidation:* `objective_function.md`'s γ·Σ(1−xᵢ−xⱼ+xᵢxⱼ) edge term is a standard penalty from this paper, and γ is its penalty scalar P. *Exposition:* Reduce each constraint to a known quadratic penalty pattern, sum them with the objective, and tune P by testing feasibility of returned samples.
+- **Exegesis.** The tutorial offers *rules of thumb* for P, not guarantees. It does not address hardware precision or embedding.<sup>[1](#b12-fn)</sup>
+- **Critique.** Heuristic weight advice; CQM models (B16) now avoid some hand-tuned penalties.
+- **Marginalia.**
+  - `objective_function.md`: γ trades off covering edges against using fewer vertices; tune it as B12 suggests.
+  - `Problem3.md`: The implication truth table (X→Y) mapped to energies is one of B12's standard constraint penalties.
+  - `Problemtwo.md`: Penalising equal qubit values is the two-variable 'not equal' penalty.
+  - `Scheduling.md`: Shift preferences plus one-shift-per-employee constraints use the same logic in a DQM.
+- **Scholia.** [B11](#b11): The physics catalogue of the same idea. [B17](#b17): Where these Q matrices become BQM objects.
+- **Footnote.** <a id="b12-fn"></a>¹ The tutorial is Part I of a series; later parts are not cited here.
+- **In context.** The guide to the penalty terms in `objective_function.md`, `Problemtwo.md`, `Problem3.md` and `Scheduling.md`.
+
+<a id="b44"></a>
+
+### B44 · Foundations for Quantum Programming: full course bundle
+
+> **Caption.** The whole D-Wave foundations course in one 316-page file: math, constraints, QUBO and Python.
+
+**Metadata.** D-Wave Quantum Inc. (2024). *Foundations for Quantum Programming (self-paced online course, D-Wave training); slide deck v1.x; not peer-reviewed*. Course material (grey literature). [training.dwavequantum.com/product?catalog=FoundationsQuantumProgramming](https://training.dwavequantum.com/product?catalog=FoundationsQuantumProgramming). Verified 10 Nov 2026.<br>
+**Descriptors.** Curriculum · QUBO formulation · Constraint encoding · Mathematical foundations · **Tags.** `course-material` `grey-literature` `course-bundle` `dwave-training` · **Labels.** `evidence:grey-literature` `role:curriculum` `type:course-material` `status:verified`
+
+- **Abstract.** D-Wave's self-paced course of slide decks with speaker notes, an optional prerequisite to its Quantum Programming Core training. It covers math symbols, sets, functions, polynomials, summation notation, truth tables, graphs, matrices, variable types, quadratic models and QUBOs, constraints and penalty expressions, combining objectives with constraints, and Python basics (data structures, if statements, loops, list comprehensions, functions, packages and Codespaces).
+- **Gloss.** *Quadratic model (QM)*: A polynomial objective of degree at most two; the course says every model D-Wave software accepts is of this kind. *Lagrange parameter*: The course's name for the weight that multiplies a penalty expression before it is added to the objective.
+- **Commentary.** The course this repository's formulation habits come from, cited here as grey literature: D-Wave's own training slides, not a paper. *Elucidation:* It explains the repo's pattern of binary variables, a truth table per rule, a penalty per truth table, and one objective handed to a sampler. *Exposition:* The course runs a five-step recipe: state the objective and constraints in words; choose binary variables; write both as math; convert each constraint into a penalty that is zero exactly when it holds; add the weighted penalties to the objective and simplify, using x² = x for binary variables. Worked examples include picking two of three objects at minimum weight and a four-subset set-partitioning problem with two weights (λ and γ).
+- **Exegesis.** The bundle teaches formulation; it does not claim that any formulation runs faster on a QPU, and it does not tell the learner how large the penalty weight must be. That choice is left to later courses and to B12's guidance.<sup>[1](#b44-fn)</sup>
+- **Critique.** Vendor teaching material with no references, so each rule should be traced to B11, B12 or B17. Its worked examples stop before choosing penalty weights: in its own pick-two-of-three example the feasible answer has the lowest energy only if the weight λ exceeds 5, which a local `ExactSolver` run confirms.
+- **Marginalia.**
+  - `KeyTerms.md`: Its penalty table has the same six rows as the course's two-variable table.
+  - `Scheduling.md`: The DQM already gives each employee exactly one shift, so the uniform quadratic bias of 1 between every pair of employees adds only a constant; it does not enforce anything, despite the code comment.
+  - `README.md`: The Number Partitioning projects follow the course's QUBO recipe.
+- **Scholia.** [B12](#b12): The citable source for the same penalties. [B11](#b11): The recipe at the scale of NP problems. [B17](#b17): Where the combined objective becomes a BQM.
+- **Footnote.** <a id="b44-fn"></a>¹ Slides © D-Wave Quantum Inc., 2024, v1.x; course page verified 10 Nov 2026. They are described here, not reproduced.
+- **In context.** Background for every formulation file in this repository.
+
+<a id="b53"></a>
+
+### B53 · Penalty Expressions and Logical Constraints (reference sheets)
+
+> **Caption.** Two one-page tables: logical rule, its equality or inequality, and the penalty that enforces it.
+
+**Metadata.** D-Wave Quantum Inc. (2024). *Foundations for Quantum Programming (self-paced online course, D-Wave training); slide deck v1.x; not peer-reviewed*. Course material (grey literature). [training.dwavequantum.com/product?catalog=FoundationsQuantumProgramming](https://training.dwavequantum.com/product?catalog=FoundationsQuantumProgramming). Verified 10 Nov 2026.<br>
+**Descriptors.** Curriculum · Constraint encoding · QUBO formulation · **Tags.** `course-material` `grey-literature` `penalties` `logic` · **Labels.** `evidence:grey-literature` `role:curriculum` `type:course-material` `status:verified`
+
+- **Abstract.** Reference tables pairing two-variable rules (AND, OR, NAND, XOR, implication both ways, IFF) and three-variable rules (all three, at most one, exactly two, and others) with their equality or inequality and, on the penalty sheet, a quadratic penalty that is zero exactly when the rule holds.
+- **Gloss.** *Penalty expression*: A function that is zero on allowed assignments and positive on forbidden ones. *Equality penalty*: The square of (sum − target), expanded with x² = x.
+- **Commentary.** The one-page penalty catalogue from the same course. *Elucidation:* Every penalty in this repo is a row of it: OR per edge in `objective_function.md`, implication in `Problem3.md`, XOR in `Problemtwo.md`. *Exposition:* Two families. Equalities use squared residuals: AND is (x + y − 2)², XOR is (x + y − 1)², exactly-two-of-three is (x + y + z − 2)². Inequalities use products: NAND is xy, OR is (1 − x)(1 − y), at most one of three is xy + xz + yz. All rows were checked here by enumeration and every one is correct.
+- **Exegesis.** The sheets list penalties; they do not say penalties are not unique (any positive multiple ranks assignments the same way), and they do not mention that some rules have no penalty of this kind at all without an extra variable.<sup>[1](#b53-fn)</sup>
+- **Critique.** Correct (all ten rows check out by enumeration) but uncited; the two-variable rows match B12's table. It offers no penalty for 'at least one of three' or 'at most two of three', and none exists without an extra variable.
+- **Marginalia.**
+  - `Problem3.md`: Energies 0, 0, 1, 0 for 00, 01, 10, 11 are the implication penalty x − xy.
+  - `Problemtwo.md`: Favoring unequal pairs is XOR: 1 − x − y + 2xy.
+  - `objective_function.md`: Expanding γ(1 − xᵢ − xⱼ + xᵢxⱼ) gives +γ on each edge interaction and −γ on each endpoint's linear term. The Python snippet uses −2γ on the interaction and no linear −γ terms, so its energies differ from the formula's on 11 of the 16 assignments of its 4-node example.
+- **Scholia.** [B12](#b12): Glover's table is the citable form of these rows. [B11](#b11): Whole Hamiltonians built from such terms.
+- **Footnote.** <a id="b53-fn"></a>¹ Two reference sheets: Penalty Expressions and Logical Constraints. The arithmetic above was checked locally with dimod's classical ExactSolver; no QPU was used.
+- **In context.** The penalty reference for `KeyTerms.md`, `Problem3.md`, `Problemtwo.md` and `objective_function.md`.
+
+<a id="b13"></a>
+
+### B13 · Minor-embedding in adiabatic quantum computation: I. The parameter setting problem
+
+> **Caption.** Why chain strength exists, and what goes wrong when it is wrong.
+
+**Metadata.** Vicky Choi (2008). *Quantum Information Processing 7(5): 193–209*. Journal article. DOI: [10.1007/s11128-008-0082-9](https://doi.org/10.1007/s11128-008-0082-9). Verified 10 Nov 2026.<br>
+**Descriptors.** Minor embedding · **Tags.** `chain-strength` `chain-break` `parameter-setting` · **Labels.** `evidence:peer-reviewed` `role:foundation` `type:journal-article` `status:verified`
+
+- **Abstract.** Formalises minor embedding for annealers and derives conditions on the ferromagnetic coupling within qubit chains so the embedded Hamiltonian keeps the original ground state.
+- **Gloss.** *Minor embedding*: Representing one logical variable by a connected chain of physical qubits. *Chain break*: A returned sample where qubits of one chain disagree.
+- **Commentary.** Why chain strength exists. *Elucidation:* `sampleset.md` guesses that a `chain_.` column could mean chain breaks. It does, and this paper explains why they matter. *Exposition:* Chains must be coupled strongly enough to act as one spin, but not so strongly that they swamp the problem's own energy scale.
+- **Exegesis.** Gives *sufficient* bounds for ground-state preservation. It does not prescribe one best chain strength for noisy hardware.<sup>[1](#b13-fn)</sup>
+- **Critique.** Idealised model; on real hardware, too-strong chains compress the usable coefficient range.
+- **Marginalia.**
+  - `sampleset.md`: `chain_.` is the fraction of broken chains in each sample; log it with every QPU run.
+  - `README.md`: The Embedding training run (Project ID 6dbabf04…) is where chains were viewed in D-Wave Inspector.
+- **Scholia.** [B14](#b14): B14 finds the chains; B13 sets how strongly they are held. [B10](#b10): The topology decides how long the chains must be.
+- **Footnote.** <a id="b13-fn"></a>¹ Part II (2011) covers designing hardware graphs; it is not cited here.
+- **In context.** The theory behind the embedding training project and the `chain_.` column.
+
+<a id="b14"></a>
+
+### B14 · A practical heuristic for finding graph minors
+
+> **Caption.** The algorithm behind minorminer.
+
+**Metadata.** Jun Cai, William G. Macready, Aidan Roy (2014). *arXiv:1406.2741*. Preprint. [arxiv.org/abs/1406.2741](https://arxiv.org/abs/1406.2741). Verified 10 Nov 2026.<br>
+**Descriptors.** Minor embedding · Software toolchain · **Tags.** `heuristic` `minorminer` `graph-minor` · **Labels.** `evidence:preprint` `role:tool` `type:preprint` `status:verified`
+
+- **Abstract.** Presents a fast heuristic that finds minor embeddings of arbitrary problem graphs into hardware graphs by iteratively rerouting chains, without exhaustive search.
+- **Gloss.** *Graph minor*: A graph obtained by contracting edges and deleting vertices of another.
+- **Commentary.** The heuristic that turns a QUBO into a QPU job. *Elucidation:* It is the algorithm behind D-Wave's minorminer, which `EmbeddingComposite` calls when the code in this README sends a BQM to the QPU. *Exposition:* Place each variable, route paths to its neighbours, then repeatedly rip up and reroute overused qubits until chains are disjoint.
+- **Exegesis.** Heuristic: it finds embeddings *often*, not always, and gives no optimality guarantee on chain length.<sup>[1](#b14-fn)</sup>
+- **Critique.** Randomised; results vary run to run, so embeddings should be logged for reproducibility.
+- **Marginalia.**
+  - `README.md`: The 'Python code to process D-Wave output' block initialises a sampler and composite: that composite runs this heuristic.
+  - `Maxindependentsetgraph.md`: It imports `EmbeddingComposite`, so the graph is embedded automatically before sampling.
+- **Scholia.** [B13](#b13): Placement versus strength. [B10](#b10): The target graph it embeds into.
+- **Footnote.** <a id="b14-fn"></a>¹ The heuristic is randomised, so save the embedding or its seed if you need to reproduce a run.
+- **In context.** The practical side of the Embedding training project.
+
+<a id="b10"></a>
+
+### B10 · Next-Generation Topology of D-Wave Quantum Processors
+
+> **Caption.** Pegasus: degree 15 instead of Chimera's 6, and what that means for chains.
+
+**Metadata.** Kelly Boothby, Paul Bunyk, Jack Raymond, Aidan Roy (2020). *arXiv:2003.00133*. Preprint. [arxiv.org/abs/2003.00133](https://arxiv.org/abs/2003.00133). Verified 10 Nov 2026.<br>
+**Descriptors.** Hardware topology · Minor embedding · **Tags.** `pegasus` `chimera` `connectivity` · **Labels.** `evidence:preprint` `role:hardware-context` `type:preprint` `status:verified`
+
+- **Abstract.** Describes the Pegasus qubit-connectivity graph used in Advantage systems and evaluates how its higher degree shortens embedding chains compared with Chimera.
+- **Gloss.** *Topology*: The hardware graph of which qubits can couple. *Degree*: Number of couplers per qubit.
+- **Commentary.** A vendor description of the Pegasus qubit graph. *Elucidation:* It explains the hardware behind the 'Advantage_system 4.1' solver named in every Project ID section. *Exposition:* More couplers per qubit means fewer physical qubits per logical variable, which reduces chain breaks and frees capacity.
+- **Exegesis.** States Pegasus nodes have nominal degree 15. It does not say every problem embeds better, nor address Advantage2's Zephyr topology.<sup>[1](#b10-fn)</sup>
+- **Critique.** Preprint by vendor authors; embedding gains are measured on chosen benchmark families.
+- **Marginalia.**
+  - `README.md`: Solver: Advantage_system4.1 is a Pegasus-topology system. Record the topology with each run.
+  - `Quantum_Engineering.md`: Engineering choices such as connectivity are what this paper documents.
+- **Scholia.** [B13](#b13): Why connectivity shortens chains. [B9](#b9): Physics results from a processor with this kind of topology.
+- **Footnote.** <a id="b10-fn"></a>¹ Advantage2 uses the later Zephyr topology, which this paper does not cover.
+- **In context.** Hardware context for the QPU runs recorded here.
+
+<a id="b9"></a>
+
+### B9 · Quantum critical dynamics in a 5,000-qubit programmable spin glass
+
+> **Caption.** Coherent critical dynamics at Advantage scale; still not an optimization advantage.
+
+**Metadata.** Andrew D. King, Jack Raymond, Trevor Lanting, et al. (2023). *Nature 617(7959): 61–66*. Journal article. DOI: [10.1038/s41586-023-05867-2](https://doi.org/10.1038/s41586-023-05867-2). Verified 10 Nov 2026.<br>
+**Descriptors.** Quantum dynamics · Quantum simulation · **Tags.** `spin-glass` `advantage-system` `coherence` · **Labels.** `evidence:peer-reviewed` `role:hardware-context` `type:journal-article` `status:verified`
+
+- **Abstract.** Extends fast-anneal coherence tests to spin glasses on an Advantage processor with thousands of qubits, reporting agreement with quantum critical dynamics.
+- **Gloss.** *Spin glass*: Disordered magnet with random couplings and many competing low-energy states.
+- **Commentary.** Peer-reviewed physics on Advantage-class hardware. *Elucidation:* It shows what the hardware used in these exercises has demonstrated as a quantum simulator. That is a different question from how well it solves partitioning. *Exposition:* Measure how residual energy scales with sweep time and compare with quantum versus classical critical exponents.
+- **Exegesis.** Claims *quantum critical dynamics in a programmable spin glass*. It does not claim faster solutions to practical scheduling.<sup>[1](#b9-fn)</sup>
+- **Critique.** Comparison relies on specific classical models; critics argue other classical dynamics may mimic parts of the signal.
+- **Marginalia.**
+  - `Quantum_Engineering.md`: The 'device as experiment' theme, at 5,000-qubit scale.
+  - `README.md`: Unrelated to the timing tables. It is about dynamics, not speed.
+- **Scholia.** [B43](#b43): The rationale for building such devices. [B37](#b37): Computational value is a separate question.
+- **Footnote.** <a id="b9-fn"></a>¹ The comparison relies on specific classical models of the dynamics, and critics have questioned some of them.
+- **In context.** Background for `Quantum_Engineering.md`, not for solution speed.
+
+<a id="b43"></a>
+
+### B43 · Why quantum engineering?
+
+> **Caption.** The rationale for building macroscopic quantum devices; already quoted in the D-Wave repo.
+
+**Metadata.** A. M. Zagoskin (2010). *Low Temperature Physics 36(10): 911–914*. Journal article. DOI: [10.1063/1.3515522](https://doi.org/10.1063/1.3515522). Verified 10 Nov 2026.<br>
+**Descriptors.** Quantum dynamics · Hardware topology · **Tags.** `quantum-engineering` `mesoscopic` `superconducting-qubits` · **Labels.** `evidence:peer-reviewed` `role:hardware-context` `type:journal-article` `status:verified`
+
+- **Abstract.** A short perspective arguing that engineered macroscopic quantum structures built from solid-state qubits will matter beyond computing, offering a direct way to probe the quantum–classical boundary.
+- **Gloss.** *Mesoscopic*: Between atomic and macroscopic scale, yet still quantum-coherent.
+- **Commentary.** A short perspective on why macroscopic quantum devices are worth building. *Elucidation:* It is the paper `Quantum_Engineering.md` quotes three times. This entry gives it a full citation and a reading. *Exposition:* Fabricated qubits are large enough to engineer and small enough to stay quantum; that makes them both tools and test beds.
+- **Exegesis.** A perspective piece; it *motivates* engineering research and makes no claim about D-Wave's devices or their performance.<sup>[1](#b43-fn)</sup>
+- **Critique.** A four-page perspective from 2010. It predates the gate-model hardware race and today's annealers, so use it for the engineering argument only, not for any claim about current devices.
+- **Marginalia.**
+  - `Quantum_Engineering.md`: All three quotations match this record (Low Temp. Phys. 36(10): 911–914).
+- **Scholia.** [B9](#b9): A concrete large device of the kind it anticipates. [B10](#b10): The engineering of one such device.
+- **Footnote.** <a id="b43-fn"></a>¹ The citation in `Quantum_Engineering.md` matches Crossref exactly.
+- **In context.** The source behind `Quantum_Engineering.md`.
+
+<a id="b37"></a>
+
+### B37 · What is the Computational Value of Finite-Range Tunneling?
+
+> **Caption.** Big speedups over SA on crafted instances, and why that is not 'advantage'.
+
+**Metadata.** Vasil S. Denchev, Sergio Boixo, Sergei V. Isakov, et al. (2016). *Physical Review X 6(3): 031015*. Journal article. DOI: [10.1103/PhysRevX.6.031015](https://doi.org/10.1103/PhysRevX.6.031015). Verified 10 Nov 2026.<br>
+**Descriptors.** Benchmarking · Classical baselines · Quantum annealing · **Tags.** `weak-strong-clusters` `quantum-monte-carlo` `d-wave-2x` · **Labels.** `evidence:peer-reviewed` `role:caution` `type:journal-article` `status:verified` `claim:counterweight`
+
+- **Abstract.** Designs problem instances with tall, narrow energy barriers ('weak-strong clusters') where tunnelling should help, and reports a D-Wave 2X running far faster than simulated annealing and quantum Monte Carlo on them, while noting other classical algorithms do not share SA's weakness.
+- **Gloss.** *Finite-range tunnelling*: Tunnelling through barriers spanning a bounded number of spins (the clusters). *QMC*: Quantum Monte Carlo, a classical simulation of quantum annealing.
+- **Commentary.** The standard lesson on crafted instances and baseline choice. *Elucidation:* If a training run here ever looks 'faster than classical', this paper shows what to ask: faster than which algorithm, on which instances? *Exposition:* If barriers are tall but thin, thermal hopping is slow and tunnelling is fast; build instances that isolate that regime and measure time-to-target.
+- **Exegesis.** The large factor applies *to these crafted instances versus single-core SA and QMC*. The authors note that some other classical algorithms (for example cluster-aware large-neighbourhood search) do not suffer SA's slowdown, so no general advantage is claimed.<sup>[1](#b37-fn)</sup>
+- **Critique.** Instances engineered for the effect; wall-clock comparisons across different hardware; D-Wave 2X generation.
+- **Marginalia.**
+  - `README.md`: The timing tables report QPU access time (about 26 ms per 100-read job). They are not a comparison with any classical solver.
+  - `Test.py`: Despite the .py name it holds SQL tables for problem parameters. A comparison would need a matching table for classical runs.
+- **Scholia.** [B36](#b36): The baseline that lost in this study. [B1](#b1): The method being tested.
+- **Footnote.** <a id="b37-fn"></a>¹ Hardware: a D-Wave 2X processor; details are in the paper.
+- **In context.** The caution behind 'no advantage claimed' in this section.
+
+<a id="b16"></a>
+
+### B16 · D-Wave Documentation
+
+> **Caption.** The vendor manual for Ocean, Leap and solvers; living and versioned.
+
+**Metadata.** D-Wave Quantum Inc. (2026). *Online documentation, accessed 10 November 2026*. Vendor documentation. [docs.dwavequantum.com/en/latest](https://docs.dwavequantum.com/en/latest/). Verified 10 Nov 2026.<br>
+**Descriptors.** Software toolchain · QUBO formulation · **Tags.** `ocean` `leap` `bqm` `cqm` `dqm` `hybrid-solver` · **Labels.** `evidence:vendor-doc` `role:tool` `type:vendor-documentation` `status:verified`
+
+- **Abstract.** Official documentation for D-Wave's Ocean SDK, Leap cloud and solvers, including BQM, CQM and DQM model types, samplers and hybrid solver usage.
+- **Gloss.** *BQM / CQM / DQM*: Binary, constrained and discrete quadratic models. *Hybrid solver*: Cloud service mixing classical compute with QPU calls; not QPU capacity.
+- **Commentary.** The vendor manual for Ocean, Leap and solvers. *Elucidation:* It is the reference for the Getting Started steps (`pip install dwave-ocean-sdk`, Leap) and for `DiscreteQuadraticModel` with `LeapHybridDQMSampler` in `Scheduling.md`. *Exposition:* Ocean separates *model* (dimod), *sampler* (local, QPU, hybrid) and *composites* (embedding, etc.), so one model can be run on many back ends.
+- **Exegesis.** The docs describe what the software does; they are not independent evidence of performance, and vendor statements of capability stay vendor statements.<sup>[1](#b16-fn)</sup>
+- **Critique.** Living resource; pin a version or access date when citing.
+- **Marginalia.**
+  - `Scheduling.md`: `LeapHybridDQMSampler` is a hybrid cloud solver and needs a Leap token. Without one the code cannot run.
+  - `DQM.md`: The DQM workflow follows the docs' discrete-model guide.
+  - `workforcedqm.md`: Same DQM pattern applied to workforce allocation.
+- **Scholia.** [B17](#b17): The model library inside these docs. [B12](#b12): The docs' formulation guides echo B12's penalties.
+- **Footnote.** <a id="b16-fn"></a>¹ A living resource, so cite it with an access date (here, 10 Nov 2026).
+- **In context.** The reference for every Ocean call in this repository.
+
+<a id="b17"></a>
+
+### B17 · dimod: a shared API for QUBO/Ising samplers
+
+> **Caption.** The model layer every Ocean workflow passes through.
+
+**Metadata.** D-Wave Systems (2026). *Open-source software repository (GitHub)*. Software. [github.com/dwavesystems/dimod](https://github.com/dwavesystems/dimod). Verified 10 Nov 2026.<br>
+**Descriptors.** Software toolchain · QUBO formulation · **Tags.** `dimod` `exactsolver` `sampleset` `bqm` · **Labels.** `evidence:software` `role:tool` `type:software` `status:verified`
+
+- **Abstract.** The Ocean library defining binary and constrained quadratic models, the common sampler interface, the SampleSet result type and classical reference samplers such as ExactSolver.
+- **Gloss.** *SampleSet*: Container of returned samples with energies and occurrence counts. *ExactSolver*: Brute-force classical sampler for tiny problems.
+- **Commentary.** The model layer every Ocean workflow passes through. *Elucidation:* The `num_oc.` column in `sampleset.md` comes from dimod's SampleSet: it counts how often a sample occurred, not the probability of any real-world outcome. *Exposition:* Build a BQM from linear and quadratic biases, call `sampler.sample(bqm)`, and read a SampleSet; the same code runs on any sampler.
+- **Exegesis.** dimod defines *interfaces*; it makes no claim about which sampler is best.<sup>[1](#b17-fn)</sup>
+- **Critique.** Fast-moving API; pin versions in notebooks.
+- **Marginalia.**
+  - `ExactSolver`: This file actually uses `dwavebinarycsp` with dimod. `ExactSolver` itself is a classical brute-force reference.
+  - `sampleset.md`: Read `energy` and `num_oc.` as SampleSet fields.
+  - `README.md`: The 'Create an empty Binary Quadratic Model' snippet is the dimod API.
+- **Scholia.** [B12](#b12): Where the Q matrices come from. [B36](#b36): dimod's companion samplers include a classical SA reference.
+- **Footnote.** <a id="b17-fn"></a>¹ dimod is open source (Apache-2.0) under dwavesystems on GitHub.
+- **In context.** The library behind the BQM snippets, the `ExactSolver` file and `sampleset.md`.
+
+### Code annotations in this repository
+
+Where the four code-annotation elements appear in this repository's own files.<sup>[E3](#en3)</sup>
+
+| Element | Example in this repository |
+| --- | --- |
+| Code comment | `README.md` snippets: `# Create an empty Binary Quadratic Model`, `# Define QUBO interactions (Example values)`; `Test.py`: `-- CREATE TABLE to store the problem parameters` |
+| Docstring | None in this repository; the code lives in Markdown snippets. A docstring would sit on the first line of a function such as a QUBO builder |
+| Directive | The ` ```math ` fences in the Project ID sections tell GitHub to render LaTeX; ` ```python ` info strings set syntax highlighting |
+| Decorator | None used here. Ocean's API is plain function and class calls |
+
+<a id="excursus"></a>
+
+### Excursus: From a QUBO on paper to a sample set: what each run here measured
+
+Each Project ID section follows the same chain. A problem is written as a QUBO with penalties ([B11](#b11), [B12](#b12)). dimod holds it as a BQM ([B17](#b17)). A heuristic embeds it into chains on the Pegasus graph ([B14](#b14), [B10](#b10)), the chain strength holds each chain together ([B13](#b13)), and the QPU anneals it 100 times ([B1](#b1)). The timing tables then split the job into parts. In Project ID cd24acdf…, the QPU access time was 26.484 ms. Of that, programming took 15.756 ms, and sampling 100 reads took 10.728 ms (20 µs anneal, 67 µs readout and 21 µs delay per read). Most of the access time is set-up and readout, not annealing. That is normal for small jobs, and it is one reason a fair comparison with a classical solver such as simulated annealing ([B36](#b36)) has to define its clock carefully ([B37](#b37)). The energies in the sample sets measure the encoding: −9826.5 is a value of the partitioning QUBO, and the occurrence counts are sampler frequencies.
+
+### Endnotes
+
+1. <a id="en1"></a>**Verification.** Every source was checked on 10 November 2026 (America/New_York). DOIs were resolved at doi.org and matched against Crossref; preprints were checked on arXiv, the patent on Google Patents, and documentation and course pages on the live page.
+2. <a id="en2"></a>**Numbering.** B-numbers are stable identifiers shared across David Merwin's annotated bibliographies, so a source keeps the same number in every repository. Gaps in the numbering are expected.
+3. <a id="en3"></a>**Scope.** Sources are cited for background and method. None is used to claim a quantum advantage. The code-annotation table describes files as they are; no code was changed.
+
+### P.S.
+
+P.S. The QPU runs above are D-Wave training exercises. Their value is in the logged details: solver, reads, timing, energies and occurrences. Keep logging those, and add a matching classical run next time.
