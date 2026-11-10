@@ -1214,3 +1214,28 @@ Thank you for visiting my portfolio! 😊
 
   
 Feel free to reach out if you have any questions or would like to collaborate!
+
+---
+
+## Key sources in context
+
+The published work and documentation behind the training projects above, each tied to the part of this repository it supports.
+
+- **B1.** Kadowaki, Tadashi; Nishimori, Hidetoshi. "Quantum annealing in the transverse Ising model." *Physical Review E* 58(5): 5355–5363, 1998. DOI: [10.1103/PhysRevE.58.5355](https://doi.org/10.1103/PhysRevE.58.5355)  
+  *In context:* the origin of the annealing method behind every `QPU_ANNEAL_TIME_PER_SAMPLE` figure in the Project ID sections.
+- **B11.** Lucas, Andrew. "Ising formulations of many NP problems." *Frontiers in Physics* 2: 5, 2014. DOI: [10.3389/fphy.2014.00005](https://doi.org/10.3389/fphy.2014.00005)  
+  *In context:* gives the standard Ising/QUBO encodings for number partitioning and maximum independent set, the problems in the Number Partitioning projects and `Maxindependentsetgraph.md`.
+- **B12.** Glover, Fred; Kochenberger, Gary; Du, Yu. "Quantum Bridge Analytics I: a tutorial on formulating and using QUBO models." *4OR* 17(4): 335–371, 2019. DOI: [10.1007/s10288-019-00424-y](https://doi.org/10.1007/s10288-019-00424-y)  
+  *In context:* a practical guide to the penalty terms used in `objective_function.md`, `Problemtwo.md`, `Problem3.md` and the employee scheduling models in `Scheduling.md`.
+- **B13.** Choi, Vicky. "Minor-embedding in adiabatic quantum computation: I. The parameter setting problem." *Quantum Information Processing* 7(5): 193–209, 2008. DOI: [10.1007/s11128-008-0082-9](https://doi.org/10.1007/s11128-008-0082-9)  
+  *In context:* the theory behind the embedding training project (Project ID 6dbabf04…) and the minor-embedding done with D-Wave Inspector, including how chain strength is set.
+- **B10.** Boothby, Kelly; Bunyk, Paul; Raymond, Jack; Roy, Aidan. "Next-Generation Topology of D-Wave Quantum Processors." arXiv:2003.00133, 2020. [arxiv.org/abs/2003.00133](https://arxiv.org/abs/2003.00133)  
+  *In context:* describes the Pegasus topology of the Advantage_system 4.1 solver used for the QPU runs recorded here.
+- **B9.** King, Andrew D.; Raymond, Jack; Lanting, Trevor; et al. "Quantum critical dynamics in a 5,000-qubit programmable spin glass." *Nature* 617(7959): 61–66, 2023. DOI: [10.1038/s41586-023-05867-2](https://doi.org/10.1038/s41586-023-05867-2)  
+  *In context:* peer-reviewed physics results on Advantage-class hardware, background for `Quantum_Engineering.md`. It concerns device dynamics, not the speed of the problems solved here.
+- **B16.** D-Wave Quantum Inc. *D-Wave Documentation* (Ocean SDK, Leap and solvers). [docs.dwavequantum.com/en/latest](https://docs.dwavequantum.com/en/latest/)  
+  *In context:* the reference for the Getting Started steps (`pip install dwave-ocean-sdk`, Leap) and the DQM models in `DQM.md`, `workforcedqm.md` and `Linearweightsemployees.md`.
+- **B17.** D-Wave Systems. *dimod: a shared API for QUBO/Ising samplers.* [github.com/dwavesystems/dimod](https://github.com/dwavesystems/dimod)  
+  *In context:* the library behind the BQM code snippets, the `ExactSolver` notes and `sampleset.md`. `ExactSolver` is a classical reference solver, not a QPU run.
+
+The B-numbers (B1, B9–B13, B16, B17) refer to the full annotated bibliography in the private [merwin-flagship-projects](https://github.com/davidmerwin/merwin-flagship-projects/blob/main/bibliography/ANNOTATED_BIBLIOGRAPHY.md) repository, which requires access. Each source is cited for background and method; none is used to claim a quantum advantage.
